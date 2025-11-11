@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eee648b28bb73ae49b4c0b2c061986f5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 303835
+  packageName: Retail Store
+  packageVersion: 1.0
+  assetPath: Assets/Retail Store/FBX/Materials/CounterTableMain_BaseMap.mat
+  uploadId: 712717

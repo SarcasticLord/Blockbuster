@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 785d0496b7f872c4ba2b08383427d1cc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 303835
+  packageName: Retail Store
+  packageVersion: 1.0
+  assetPath: Assets/Retail Store/FBX/Materials/MirrorWall.mat
+  uploadId: 712717

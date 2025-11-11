@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bd567737e0628714a95222ee25b7ad16
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 303835
+  packageName: Retail Store
+  packageVersion: 1.0
+  assetPath: Assets/Scenes/Retail Store_Profiles/Post Processing Profile.asset
+  uploadId: 712717
