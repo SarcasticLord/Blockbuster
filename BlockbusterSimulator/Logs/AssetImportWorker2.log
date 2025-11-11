@@ -1,10 +1,10 @@
 Using pre-set license
-Built from '2022.3/staging' branch; Version is '2022.3.24f1 (334eb2a0b267) revision 3362482'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'sv' Physical Memory: 16309 MB
+Built from '6000.0/staging' branch; Version is '6000.0.47f1 (2ad1ed33fd3b) revision 2806253'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'en' Physical Memory: 32693 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\6000.0.47f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,7 +15,13 @@ C:/Users/SarcasticLord/Documents/block/BlockbusterSimulator
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-54563
+55130
+-job-worker-count
+5
+-background-job-worker-count
+8
+-gc-helper-count
+1
 Successfully changed project path to: C:/Users/SarcasticLord/Documents/block/BlockbusterSimulator
 C:/Users/SarcasticLord/Documents/block/BlockbusterSimulator
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -48,321 +54,173 @@ C:/Users/SarcasticLord/Documents/block/BlockbusterSimulator
     "memorysetup-temp-allocator-size-audio-worker=65536"
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [29772] Host "[IP] 10.0.0.112 [Port] 0 [Flags] 2 [Guid] 884943932 [EditorId] 884943932 [Version] 1048832 [Id] WindowsEditor(7,Type-40-Mk-1-TT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [26388]  Target information:
 
-Player connection [29772] Host "[IP] 10.0.0.112 [Port] 0 [Flags] 2 [Guid] 884943932 [EditorId] 884943932 [Version] 1048832 [Id] WindowsEditor(7,Type-40-Mk-1-TT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [26388]  * "[IP] 10.7.27.130 [Port] 0 [Flags] 2 [Guid] 4225640671 [EditorId] 4225640671 [Version] 1048832 [Id] WindowsEditor(7,Type-40-Mk-1-TT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 15.03 ms, found 3 plugins.
+Player connection [26388] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [26388] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 2.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2022.3.24f1 (334eb2a0b267)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Resources/UnitySubsystems
+Initialize engine version: 6000.0.47f1 (2ad1ed33fd3b)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.47f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/SarcasticLord/Documents/block/BlockbusterSimulator/Assets
-GfxDevice: creating device client; threaded=0; jobified=0
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
     Vendor:   NVIDIA
     VRAM:     8018 MB
-    Driver:   32.0.15.6094
+    Driver:   32.0.15.8180
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56212
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.47f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.47f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.47f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56228
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008831 seconds.
-- Loaded All Assemblies, in  0.377 seconds
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.47f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.47f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.47f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.008316 seconds.
+- Loaded All Assemblies, in  0.644 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 1434 ms
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.239 seconds
-Domain Reload Profiling: 614ms
-	BeginReloadAssembly (130ms)
+- Finished resetting the current domain, in  2.308 seconds
+Domain Reload Profiling: 2947ms
+	BeginReloadAssembly (209ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (134ms)
-		LoadAssemblies (127ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (281ms)
+		LoadAssemblies (202ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (132ms)
-			TypeCache.Refresh (131ms)
-				TypeCache.ScanAssembly (116ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (239ms)
+		AnalyzeDomain (273ms)
+			TypeCache.Refresh (270ms)
+				TypeCache.ScanAssembly (249ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (2309ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (191ms)
+		SetupLoadedEditorAssemblies (2207ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (8ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (132ms)
-			ProcessInitializeOnLoadMethodAttributes (39ms)
+			InitializePlatformSupportModulesInManaged (1615ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (159ms)
+			ProcessInitializeOnLoadAttributes (270ms)
+			ProcessInitializeOnLoadMethodAttributes (155ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (0ms)
 ========================================================================
 Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.784 seconds
-Refreshing native plugins compatible for Editor in 7.19 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.663 seconds
+Refreshing native plugins compatible for Editor in 3.73 ms, found 3 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.711 seconds
-Domain Reload Profiling: 1490ms
-	BeginReloadAssembly (153ms)
+- Finished resetting the current domain, in  1.549 seconds
+Domain Reload Profiling: 3198ms
+	BeginReloadAssembly (317ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (9ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (41ms)
-	LoadAllAssembliesAndSetupDomain (545ms)
-		LoadAssemblies (403ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (88ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (84ms)
+	LoadAllAssembliesAndSetupDomain (1135ms)
+		LoadAssemblies (785ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (233ms)
-			TypeCache.Refresh (202ms)
-				TypeCache.ScanAssembly (187ms)
-			ScanForSourceGeneratedMonoScriptInfo (20ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (711ms)
+		AnalyzeDomain (530ms)
+			TypeCache.Refresh (415ms)
+				TypeCache.ScanAssembly (385ms)
+			BuildScriptInfoCaches (94ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (1549ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (577ms)
+		SetupLoadedEditorAssemblies (1117ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (78ms)
-			ProcessInitializeOnLoadAttributes (423ms)
-			ProcessInitializeOnLoadMethodAttributes (59ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (336ms)
+			ProcessInitializeOnLoadAttributes (656ms)
+			ProcessInitializeOnLoadMethodAttributes (81ms)
+			AfterProcessingInitializeOnLoad (10ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 8.07 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (9ms)
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Hidden/Universal Render Pipeline/Terrain/Lit (Base Pass)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Universal Render Pipeline/Terrain/Lit' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.14 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5651 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 92 unused Assets / (0.8 MB). Loaded Objects now: 6102.
-Memory consumption went from 214.5 MB to 213.7 MB.
-Total: 5.549300 ms (FindLiveObjects: 0.701800 ms CreateObjectMapping: 0.223800 ms MarkObjects: 4.019900 ms  DeleteObjects: 0.602800 ms)
+Unloading 159 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6289 unused Assets / (4.9 MB). Loaded Objects now: 6855.
+Memory consumption went from 160.2 MB to 155.3 MB.
+Total: 36.252000 ms (FindLiveObjects: 1.808200 ms CreateObjectMapping: 0.818300 ms MarkObjects: 24.536300 ms  DeleteObjects: 9.084800 ms)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 7442.935901 seconds.
-  path: Assets/Prefab/InteractionSFX.prefab
-  artifactKey: Guid(73b85e934d9d91242952e3b036a3e475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/InteractionSFX.prefab using Guid(73b85e934d9d91242952e3b036a3e475) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99dd56e23980ef24e49ad1b1abfbdba1') in 0.039231 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Prefab/tree (4).prefab
-  artifactKey: Guid(1331d59f5ae57c54faddacc6116e4c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/tree (4).prefab using Guid(1331d59f5ae57c54faddacc6116e4c49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3be2356224f30b8499d5909b3e4050a0') in 0.120545 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 5.727940 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_02.prefab
-  artifactKey: Guid(7eeab333ed7416f498139b2846cbb10d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_02.prefab using Guid(7eeab333ed7416f498139b2846cbb10d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3efe2eac2847753aaa2926ed9e80d465') in 0.896717 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000341 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_01.prefab
-  artifactKey: Guid(e25671d0d7ace2c45b234d1ea8c51c8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_01.prefab using Guid(e25671d0d7ace2c45b234d1ea8c51c8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa9a89555a056f291d13fe75dcc66683') in 0.121416 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.009388 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_05.prefab
-  artifactKey: Guid(b55cadeb42ed9664191c697a2a810cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_05.prefab using Guid(b55cadeb42ed9664191c697a2a810cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16e207d99b05c411c859861f2f287dae') in 0.722269 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000061 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_30.prefab
-  artifactKey: Guid(f19666d628662324191ece8d64784a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_30.prefab using Guid(f19666d628662324191ece8d64784a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2558b30fdbafb632ccd32cdb7ca38a36') in 0.127219 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.001676 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_27.prefab
-  artifactKey: Guid(9ae4e56d111938948b75f4dd9802a5c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_27.prefab using Guid(9ae4e56d111938948b75f4dd9802a5c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73b7e2c3fa82a219108332dee7f58dce') in 0.207773 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.067489 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_28.prefab
-  artifactKey: Guid(0d1433aefa5efa844aa58b37661b0dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_28.prefab using Guid(0d1433aefa5efa844aa58b37661b0dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02d94ed4e9038dac45d8a02b2b535c66') in 0.061295 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.001641 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_12.prefab
-  artifactKey: Guid(0d7a21e247bd95b4bb0f03721763fab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_12.prefab using Guid(0d7a21e247bd95b4bb0f03721763fab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f02d9b764153e0d8219a0659323b49c') in 0.041456 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.001825 seconds.
-  path: Assets/Prefab/booksPrefabs/BookOpen_04.prefab
-  artifactKey: Guid(96b58236b5b44c848975ddea646f8ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/BookOpen_04.prefab using Guid(96b58236b5b44c848975ddea646f8ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '091f898f2cce25c06ca83999948b45aa') in 0.128396 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.014339 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_32.prefab
-  artifactKey: Guid(e3dedf77e1e05f6419d2087dbdd51bfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_32.prefab using Guid(e3dedf77e1e05f6419d2087dbdd51bfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ceb017cf573be4bc2afd4ec32916057') in 0.176868 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_11.prefab
-  artifactKey: Guid(c33441093f64d17408edb5fff22c8b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_11.prefab using Guid(c33441093f64d17408edb5fff22c8b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbedd2135d298493e027b438978d0f21') in 0.096527 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000498 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_32.prefab
-  artifactKey: Guid(139e2fe27974ac442890334914e64148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_32.prefab using Guid(139e2fe27974ac442890334914e64148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aab2ed88516057475d850483bd7f1b5') in 0.048297 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.003788 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_21.prefab
-  artifactKey: Guid(eb229865cb9c5ff4ba795c601340c1d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_21.prefab using Guid(eb229865cb9c5ff4ba795c601340c1d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c615c056996efe80ffb7cee789ed452d') in 0.071321 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.006840 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_35.prefab
-  artifactKey: Guid(bae62b4c52157a5458cd20065bea1c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_35.prefab using Guid(bae62b4c52157a5458cd20065bea1c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a37642c055ef326fdd3d4ac657023fe') in 0.122691 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_10.prefab
-  artifactKey: Guid(c8722be149fc9294bbbe96f6c293f6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_10.prefab using Guid(c8722be149fc9294bbbe96f6c293f6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a7ac98ddd64c8c1e7791dad793ee8d4') in 0.051189 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000136 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_06.prefab
-  artifactKey: Guid(6bdd18994543e264491fb71fed626cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_06.prefab using Guid(6bdd18994543e264491fb71fed626cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd8668923bb3b32cdc8ddefa48c03427') in 0.121630 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
+  Time since last request: 1995.286994 seconds.
+  path: Assets/Blockbuster_logo.svg.png
+  artifactKey: Guid(275f9abd4ece72b4eaa421bf2737f8a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Blockbuster_logo.svg.png using Guid(275f9abd4ece72b4eaa421bf2737f8a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5c96eab8e2bc06c1e5570e6ab90fca99') in 0.1887262 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_21.prefab
-  artifactKey: Guid(6b3d603977aef2b4d9facc565bc15ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_21.prefab using Guid(6b3d603977aef2b4d9facc565bc15ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a39d2c350bcd4cee1129b9f8607d93') in 0.101639 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_27.prefab
-  artifactKey: Guid(c5dc42355e9922149ba62e416f86b2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_27.prefab using Guid(c5dc42355e9922149ba62e416f86b2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f3e3c3be472b43720219e2694bed952') in 0.091937 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.002377 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_33.prefab
-  artifactKey: Guid(3d9fffef1180d41478a945cf0d8948e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_33.prefab using Guid(3d9fffef1180d41478a945cf0d8948e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c314ede3b58cbfc0104f751c9b245ec') in 0.112552 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_39.prefab
-  artifactKey: Guid(4a00219ec3deacf4689500595661ac7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_39.prefab using Guid(4a00219ec3deacf4689500595661ac7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c8d22a97ca64d3d11df17ac04044336') in 0.301514 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Prefab/booksPrefabs/Books_25.prefab
-  artifactKey: Guid(703e5542e2b421e4aabebdfd3a0ce535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Books_25.prefab using Guid(703e5542e2b421e4aabebdfd3a0ce535) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0ed15f42bd8ef1d04738c7ae517dc46') in 0.219087 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Prefab/booksPrefabs/BookOpen_01.prefab
-  artifactKey: Guid(8c327ec2627a0df46a0e82d80aaaef96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/BookOpen_01.prefab using Guid(8c327ec2627a0df46a0e82d80aaaef96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c0c3ff60b8a7e58a9165cecbdee9ce3') in 0.109017 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
-========================================================================
-Received Import Request.
-  Time since last request: 0.020280 seconds.
-  path: Assets/Prefab/booksPrefabs/Book_65.prefab
-  artifactKey: Guid(fca7ec2f1db4f5c4db10cdbdcda46f0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefab/booksPrefabs/Book_65.prefab using Guid(fca7ec2f1db4f5c4db10cdbdcda46f0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfa36fe93ce59095988a88b2b2023896') in 0.036524 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 11
+  path: Assets/UniversalRenderPipelineGlobalSettings.asset
+  artifactKey: Guid(a65fb1886038506408cb8961f9148a81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(a65fb1886038506408cb8961f9148a81) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '47be5b943aff6f00da2e46e46099d325') in 0.0500112 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 65
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
