@@ -67,3 +67,10 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 115415
+  packageName: QA Books
+  packageVersion: 1.0
+  assetPath: Assets/Scenes/books Demo scene/Demo/ReflectionProbe-0.exr
+  uploadId: 354598
