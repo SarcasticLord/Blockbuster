@@ -823,8 +823,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 43.13183, y: -0.47}
-  m_SizeDelta: {x: 359.0236, y: 47.076}
+  m_AnchoredPosition: {x: 48.0066, y: -0.47}
+  m_SizeDelta: {x: 399.6589, y: 47.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6245663726777252517
 CanvasRenderer:
@@ -854,7 +854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:/rollamap/healthbar
+  m_text: C:/blockbuster/healthbar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -919,7 +919,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.2712536, z: -1.2465668, w: -0.24627113}
+  m_margin: {x: 0, y: 0.2712536, z: -0.44189456, w: -0.24627113}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1316,8 +1316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 41.19, y: -0.47}
-  m_SizeDelta: {x: 342.8371, y: 47.076}
+  m_AnchoredPosition: {x: 62.3624, y: -0.47}
+  m_SizeDelta: {x: 519.3246, y: 47.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1461766910133192533
 CanvasRenderer:
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:/rollamap/sandwichcounter
+  m_text: C:/blockbuster/sandwichcounter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.2712536, z: -145.55313, w: -0.24627113}
+  m_margin: {x: 0, y: 0.2712536, z: 0.943115, w: -0.24627113}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2702,8 +2702,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 41.19, y: -0.47}
-  m_SizeDelta: {x: 342.8371, y: 47.076}
+  m_AnchoredPosition: {x: 39.667812, y: -0.47}
+  m_SizeDelta: {x: 330.1484, y: 47.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5140248410739621422
 CanvasRenderer:
@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:/rollamap/timer
+  m_text: C:/blockbuster/timer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2798,7 +2798,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.2712536, z: 61.780106, w: -0.24627113}
+  m_margin: {x: 0, y: 0.2712536, z: -0.12507628, w: -0.24627113}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3331,8 +3331,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 41.19, y: -0.47}
-  m_SizeDelta: {x: 342.8371, y: 47.076}
+  m_AnchoredPosition: {x: 46.2706, y: -0.47}
+  m_SizeDelta: {x: 385.1882, y: 47.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &882820623613720111
 CanvasRenderer:
@@ -3362,7 +3362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:/rollamap/minimap
+  m_text: C:/blockbuster/minimap
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3887,8 +3887,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 41.19, y: -0.47}
-  m_SizeDelta: {x: 342.8371, y: 47.076}
+  m_AnchoredPosition: {x: 44.741806, y: -0.47}
+  m_SizeDelta: {x: 372.444, y: 47.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7384161954886136946
 CanvasRenderer:
@@ -3918,7 +3918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:/rollamap/youwon
+  m_text: C:/blockbuster/youwon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3983,7 +3983,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.2712536, z: 4.692108, w: -0.24627113}
+  m_margin: {x: 0, y: 0.2712536, z: 0.07798767, w: -0.24627113}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5133,8 +5133,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 41.19, y: -0.47}
-  m_SizeDelta: {x: 342.8371, y: 47.076}
+  m_AnchoredPosition: {x: 44.006912, y: -0.47}
+  m_SizeDelta: {x: 360.9089, y: 47.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4577098857973104138
 CanvasRenderer:
@@ -5164,7 +5164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:/rollamap/youlost
+  m_text: C:/blockbuster/youlost
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5229,7 +5229,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.2712536, z: 20.620026, w: -0.24627113}
+  m_margin: {x: 0, y: 0.2712536, z: 0.6257477, w: -0.24627113}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5541,8 +5541,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 43.13183, y: -0.47}
-  m_SizeDelta: {x: 359.0236, y: 47.076}
+  m_AnchoredPosition: {x: 28.85379, y: -0.54}
+  m_SizeDelta: {x: 238.7697, y: 47.076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3742266876121198104
 CanvasRenderer:
@@ -5572,7 +5572,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: C:/rollamap
+  m_text: C:/blockbuster
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5637,7 +5637,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.2712536, z: 169.62064, w: -0.24627113}
+  m_margin: {x: 0, y: 0.2712536, z: 0.8380928, w: -0.24627113}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
