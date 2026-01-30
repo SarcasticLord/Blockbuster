@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class wallDamage : MonoBehaviour
+public class enemyDamage : MonoBehaviour
 {
     public playerHealth playerHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

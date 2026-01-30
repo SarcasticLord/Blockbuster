@@ -9,9 +9,14 @@ public class playerController : MonoBehaviour
     private Rigidbody rb;
     private float movementX;
     private float movementY;
-    private int count;
+
+    private int stockCount;
+    private int netflixCount;
+
     public float speed = 0;
-    public TextMeshProUGUI countText;
+    public TextMeshProUGUI stockedText;
+    public TextMeshProUGUI netflixText;
+
     public GameObject winTextObject;
     //public GameObject loseTextObject;
     public Timer timer;
@@ -21,8 +26,10 @@ public class playerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent <Rigidbody>();
-        count = 0;
-        SetCountText();
+        stockCount = 0;
+        netflixCount = 0;
+        SetStockedText();
+        SetNetflixText();
         winTextObject.SetActive(false);
         //loseTextObject.SetActive(false);
     }
@@ -35,16 +42,17 @@ public class playerController : MonoBehaviour
 
     void OnMove (InputValue movementValue)
     {
-        Vector2 movementVector = movementValue.Get<Vector2>();
+        Vector3 movementVector = movementValue.Get<Vector3>();
         movementX = movementVector.x;
         movementY = movementVector.y;
     }
 
-    void SetCountText() // this also includes the win stuff like the text and confetti and stopping the timer
+    void Objectives() // when the player gets 10/10 on both netflix and movies they win the game
     {
-        countText.text = "Ham sandwiches: " + count.ToString() + "/10";
+        stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
+        netflixText.text = "Netflix employees stopped: " + netflixCount.ToString() + "/10";
 
-        if (count >= 10)
+        if (stockCount >= 10 && netflixCount >= 10)
         {
             winTextObject.SetActive(true);
 
@@ -66,13 +74,15 @@ public class playerController : MonoBehaviour
         if (other.gameObject.CompareTag("pickUp"))
         {
             other.gameObject.SetActive(false);
-            count = count + 1;
-            SetCountText();
+            stockCount = stockCount + 1;
+            Objectives();
 
         }
+
+
     }
 
-    void OnDestroy()
+    void OnDestroy() // when the player is killed restart the scene
     {
         if (timer != null)
         {
