@@ -28,8 +28,8 @@ public class playerController : MonoBehaviour
         rb = GetComponent <Rigidbody>();
         stockCount = 0;
         netflixCount = 0;
-        SetStockedText();
-        SetNetflixText();
+        // SetStockedText();
+        // SetNetflixText();
         winTextObject.SetActive(false);
         //loseTextObject.SetActive(false);
     }
