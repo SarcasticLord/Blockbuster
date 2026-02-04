@@ -23,12 +23,12 @@ public class PickupController : MonoBehaviour
         {
             transform.Translate(new Vector3(0, distance * movement));
             counter--;
-            if (counter <= 0) // if we moved 5 times
+            if (counter <= 0) // if it moved 5 times
             {
                 movement *= -1; // now move in the oposite directoon
                 counter = 5; // reset counter
             }
-            //yield return new WaitForSeconds(.09f);
+            yield return new WaitForSeconds(.09f);
         }
     }
 }
