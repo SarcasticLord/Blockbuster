@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class enemyDamage : MonoBehaviour
+public class EnemyDamage : MonoBehaviour
 {
-    public playerHealth playerHealth;
+    public PlayerHealth playerHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +19,7 @@ public class enemyDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.TakeDamage(1);
+            PlayerHealth.TakeDamage(1);
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class playerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 
 {
     private Rigidbody rb;

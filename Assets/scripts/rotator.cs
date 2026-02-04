@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class rotator : MonoBehaviour
+public class Rotator : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
