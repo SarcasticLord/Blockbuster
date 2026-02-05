@@ -8,24 +8,26 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
     private float movementX;
-    private float movementY;
-
+    private float movementZ;
     private int stockCount;
     private int netflixCount;
 
-    public float speed = 0;
+
     public TextMeshProUGUI stockedText;
     public TextMeshProUGUI netflixText;
 
     public GameObject winTextObject;
     //public GameObject loseTextObject;
     public Timer timer;
-    public ParticleSystem confetti;
 
 
     void Start()
     {
         rb = GetComponent <Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.visible = false;
+        
+        
         stockCount = 0;
         netflixCount = 0;
         // SetStockedText();
@@ -34,32 +36,25 @@ public class PlayerController : MonoBehaviour
         //loseTextObject.SetActive(false);
     }
 
-    private void FixedUpdate()
+    void Update()
     {
-        Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        
     }
 
-    void OnMove (InputValue movementValue)
+    void FixedUpdate()
     {
-        Vector3 movementVector = movementValue.Get<Vector3>();
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+
     }
 
-    void Objectives() // when the player gets 10/10 on both netflix and movies they win the game
+    void Objectives() 
     {
         stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
         netflixText.text = "Netflix employees stopped: " + netflixCount.ToString() + "/10";
 
-        if (stockCount >= 10 && netflixCount >= 10)
+        if (stockCount >= 10 && netflixCount >= 10) // both objectives are done then win the game
         {
             winTextObject.SetActive(true);
 
-            if (confetti != null)
-            {
-                confetti.Play();
-            }
 
             if (timer != null)
             {
@@ -68,7 +63,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) // player hits the pickups
     {
 
         if (other.gameObject.CompareTag("pickUp"))
@@ -84,11 +79,21 @@ public class PlayerController : MonoBehaviour
 
     void OnDestroy() // when the player is killed restart the scene
     {
+        Invoke("Die", 2f);
+    }
+
+
+    void Die() // this should be the thing that restarts the scene and stops the timer 
+    {
+        GameManager.instance.DecreaseLives();
+        Debug.Log("lives: " + GameManager.instance.GetLives());
+        SceneManager.LoadScene(0);
+
         if (timer != null)
         {
             timer.StopTimer();
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
  
 }

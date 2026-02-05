@@ -16,13 +16,13 @@ public GameObject loseTextObject;
     }
     public Slider slider;
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount) // takes damage right
     {
         health -= amount;
         slider.value = health;
         if (health <= 0)
         {
-            Destroy (gameObject);
+            Destroy (gameObject); // destorys the player, player controller does the rest
             loseTextObject.SetActive(true);
         }
         
