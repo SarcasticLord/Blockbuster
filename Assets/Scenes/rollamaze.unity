@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 100044436}
   - component: {fileID: 100044435}
   - component: {fileID: 100044434}
-  - component: {fileID: 100044433}
+  - component: {fileID: 100044437}
   m_Layer: 0
   m_Name: outer walls (1)
   m_TagString: Untagged
@@ -774,19 +774,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 462837219}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!114 &100044433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100044431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac19f34bc99f65542895d77fac7656c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 687033008}
 --- !u!65 &100044434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -861,6 +848,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100044431}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &100044437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100044431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8320422d24a2214088f4c56043095ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollPlayerHealth: {fileID: 1475410851}
 --- !u!1 &106963135
 GameObject:
   m_ObjectHideFlags: 0
@@ -3224,10 +3224,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 614923112}
+  - component: {fileID: 614923116}
   - component: {fileID: 614923115}
   - component: {fileID: 614923114}
   - component: {fileID: 614923113}
-  - component: {fileID: 614923116}
   m_Layer: 0
   m_Name: outer walls
   m_TagString: Untagged
@@ -3336,23 +3336,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8320422d24a2214088f4c56043095ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollPlayerHealth: {fileID: 1475410851}
+  rollPlayerHealth: {fileID: 1412049678}
 --- !u!1 &646130519 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6281005890219310367, guid: 287c22c46ec0c1b469fa52f96336bbe2, type: 3}
   m_PrefabInstance: {fileID: 1943581093}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &687033008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7552373643077776680, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
-  m_PrefabInstance: {fileID: 102749427294528729}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412049677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304c852727eabd742ab4f08562511bc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &706141109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6281005890219310367, guid: 287c22c46ec0c1b469fa52f96336bbe2, type: 3}
@@ -5569,7 +5558,7 @@ GameObject:
   - component: {fileID: 1200443759}
   - component: {fileID: 1200443758}
   - component: {fileID: 1200443757}
-  - component: {fileID: 1200443756}
+  - component: {fileID: 1200443760}
   m_Layer: 0
   m_Name: outer walls (2)
   m_TagString: Untagged
@@ -5592,19 +5581,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 462837219}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
---- !u!114 &1200443756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200443754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac19f34bc99f65542895d77fac7656c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 687033008}
 --- !u!65 &1200443757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5679,6 +5655,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200443754}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1200443760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200443754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8320422d24a2214088f4c56043095ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollPlayerHealth: {fileID: 1475410851}
 --- !u!1 &1206152542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6458,6 +6447,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2923889655474240343, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
   m_PrefabInstance: {fileID: 102749427294528729}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1412049678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412049677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6207bd6710f160044aab6735982d417f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  timer: {fileID: 421682026}
+  maxHealth: 10
+  loseTextObject: {fileID: 28475286}
+  slider: {fileID: 356183373}
 --- !u!1 &1443674696
 GameObject:
   m_ObjectHideFlags: 0
@@ -6467,6 +6473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1443674697}
+  - component: {fileID: 1443674702}
   - component: {fileID: 1443674700}
   - component: {fileID: 1443674699}
   - component: {fileID: 1443674698}
@@ -6580,6 +6587,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollPlayerHealth: {fileID: 1475410851}
+--- !u!114 &1443674702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443674696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8320422d24a2214088f4c56043095ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollPlayerHealth: {fileID: 1412049678}
 --- !u!1 &1475410841
 GameObject:
   m_ObjectHideFlags: 0
@@ -14934,13 +14954,17 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 0.16572571
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7552373643077776680, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 603754800744509235, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
       insertIndex: 0
       addedObject: {fileID: 1749481076}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2923889655474240343, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1412049678}
   m_SourcePrefab: {fileID: 100100000, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
 --- !u!1001 &4785381461328888162
 PrefabInstance:

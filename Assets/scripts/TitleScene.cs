@@ -30,7 +30,7 @@ public class TitleScene : MonoBehaviour
 // this is where all the button linking is going to go
     public void StartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Minigame()
@@ -38,13 +38,20 @@ public class TitleScene : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-        public void Exit()
+    public void Exit()
     {
         SceneManager.LoadScene(3);
     }
 
-        public void ToTitle()
+    public void ExitConf()
     {
-        SceneManager.LoadScene(1);
+        Application.Quit();
+        Debug.Log("Quit the game");
+    }
+    
+
+    public void ToTitle()
+    {
+        SceneManager.LoadScene(0);
     }
 }
