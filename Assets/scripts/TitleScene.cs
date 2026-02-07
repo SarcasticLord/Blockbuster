@@ -37,4 +37,14 @@ public class TitleScene : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+        public void Exit()
+    {
+        SceneManager.LoadScene(3);
+    }
+
+        public void ToTitle()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

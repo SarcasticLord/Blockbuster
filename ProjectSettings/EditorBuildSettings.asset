@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rollamaze.unity
     guid: e981adb4eb8f81a4bb8dde1c1e162be9
+  - enabled: 1
+    path: Assets/Scenes/ExitScene.unity
+    guid: 2479757fa92d86141a6725c2cf9ea84b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
