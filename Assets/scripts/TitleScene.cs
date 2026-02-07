@@ -19,7 +19,7 @@ public class TitleScene : MonoBehaviour
         StartCoroutine(TitleText());
     }
 
-    IEnumerator TitleText()
+    IEnumerator TitleText() // when the scene loads this "loads" in the ui elements 
     {
         foreach (GameObject startText in textObjects)
         {
@@ -27,7 +27,7 @@ public class TitleScene : MonoBehaviour
             yield return new WaitForSeconds(.05f);
         }
     }
-
+// this is where all the button linking is going to go
     public void StartGame()
     {
         SceneManager.LoadScene(0);
