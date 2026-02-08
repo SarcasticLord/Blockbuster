@@ -18,6 +18,7 @@ public class TitleScene : MonoBehaviour
             startText.SetActive(false);
         }
         StartCoroutine(TitleText());
+        
     }
 
     IEnumerator TitleText() 
@@ -55,12 +56,24 @@ public class TitleScene : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
-    public void ExitConf()
+    public void ExitConf()  // when the exit button is clicked
     {
-        Application.Quit();
-        Debug.Log("Quit the game");
+        StartCoroutine(RmText());
     }
-    
+    IEnumerator RmText() 
+    {
+        Debug.Log("Quit the game");
+
+        foreach (GameObject startText in textObjects) // this unloads the text in exit scene
+        {
+            
+            startText.SetActive(false);
+            yield return new WaitForSeconds(.05f);
+            
+        }
+        yield return new WaitForSeconds(.20f);
+        Application.Quit();                             // then it exits the game after .5
+    } 
 
     public void ToTitle()
     {
