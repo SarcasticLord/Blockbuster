@@ -1,0 +1,93 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Windows;
+using TMPro;
+
+public class InputManager : MonoBehaviour
+{
+    public static InputManager instance;
+
+    public TMP_Text outputText; // the output 
+    public TMP_InputField userInput; // the input field object
+    public TMP_Text inputText; // part of the input field where user enters response
+    public TMP_Text placeHolderText; // part of the input field for initial placeholder text
+    
+    private string output; // holds the output to display
+    private List<string> commands = new List<string>();
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        commands.Add("1");
+        commands.Add("2");
+        commands.Add("3");
+        
+        output = outputText.text;
+        userInput.onEndEdit.AddListener(GetInput);
+    }
+
+    void GetInput(string input) // player enters a number and it changes the scene
+    {
+
+        Updateoutput(input);
+        userInput.text = "";
+        userInput.ActivateInputField();
+
+        if (input != "")
+        {
+            char[] delims = { ' ' };
+
+            string[] parts = input.ToLower().Split(delims); // parts[0] command, parts[1] direction or pickup
+
+            if (parts.Length > 0)
+            {
+                if (commands.Contains(parts[0]))
+                {
+                    switch (parts[0])
+                    {
+                        case "1":
+                            SceneManager.LoadScene(1);
+                            Updateoutput("Starting Blockbuster Simulator");
+                            break;
+                        
+                        case "2":
+                            SceneManager.LoadScene(2);
+                            Updateoutput("Starting Roll a Maze Minigame");
+                            break;
+
+                        case "3":
+                            SceneManager.LoadScene(3);
+                            Updateoutput("ERROR: EXIT_BLOCKBUSTER_SIMULATOR");
+                            break;
+                    }
+                }
+                else
+                {
+                    Updateoutput("ERROR: INVALID_OPTION_SELECTED");
+                }
+            }
+        }
+
+
+    }
+
+    
+
+    public void Updateoutput(string msg)
+    {
+        output += "\n" + msg;
+        outputText.text = output;
+    }
+}
