@@ -4,13 +4,14 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+// this is where the scene changer is and where the ui elements on the title and exit screen are
+
 public class TitleScene : MonoBehaviour
 {
 
     public GameObject[] textObjects;
     public GameObject flashingText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         foreach (GameObject startText in textObjects)
