@@ -57,6 +57,11 @@ public class TitleScene : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void ExitConf()  // when the exit button is clicked
     {
         StartCoroutine(RmText());
@@ -81,3 +86,6 @@ public class TitleScene : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 }
+
+
+// DONT FORGET THE INPUT MANAGER DONT FORGET THE INPUT MANAGER DONT FORGET THE INPUT MANAGER DONT FORGET THE INPUT MANAGER DONT FORGET THE INPUT MANAGER

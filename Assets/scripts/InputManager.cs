@@ -30,9 +30,11 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
+        commands.Add("0");
         commands.Add("1");
         commands.Add("2");
         commands.Add("3");
+        commands.Add("4");
         
         output = outputText.text;
         userInput.onEndEdit.AddListener(GetInput);
@@ -57,19 +59,29 @@ public class InputManager : MonoBehaviour
                 {
                     switch (parts[0])
                     {
+                        case "0":
+                            SceneManager.LoadScene(0);
+                            Updateoutput("startgame");
+                            break;
+
                         case "1":
                             SceneManager.LoadScene(1);
-                            Updateoutput("Starting Blockbuster Simulator");
+                            Updateoutput("STARTING_BLOCKBUSTER_SIMULATOR");
                             break;
                         
                         case "2":
                             SceneManager.LoadScene(2);
-                            Updateoutput("Starting Roll a Maze Minigame");
+                            Updateoutput("STARTING_ROLLAMAZE_MINIGAME");
                             break;
 
                         case "3":
                             SceneManager.LoadScene(3);
                             Updateoutput("ERROR: EXIT_BLOCKBUSTER_SIMULATOR");
+                            break;
+
+                        case "4":
+                            SceneManager.LoadScene(4);
+                            Updateoutput("BLOCKBUSTER_CREDITS_SCREEN");
                             break;
                     }
                 }
