@@ -62,6 +62,16 @@ public class TitleScene : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void OpenLinkedin()
+    {
+        Application.OpenURL("https://www.linkedin.com/in/jackhigh/");
+    }
+
+    public void OpenPortfolio()
+    {
+        Application.OpenURL("https://sarcasticstudios.notion.site/Jack-High-s-Portfolio-29c8836d033781e1a2a3f1b1df0a2b26");
+    }
+
     public void ExitConf()  // when the exit button is clicked
     {
         StartCoroutine(RmText());
