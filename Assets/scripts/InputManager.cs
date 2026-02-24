@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour
     public TMP_InputField userInput; // the input field object
     public TMP_Text inputText; // part of the input field where user enters response
     public TMP_Text placeHolderText; // part of the input field for initial placeholder text
+
+    public ScrollRect scrollRect; // controls how our story scrolls
     
     private string output; // holds the output to display
     private List<string> commands = new List<string>();
@@ -38,6 +40,13 @@ public class InputManager : MonoBehaviour
         
         output = outputText.text;
         userInput.onEndEdit.AddListener(GetInput);
+    }
+
+    
+    IEnumerator ScrollToBottom()
+    {
+        yield return new WaitForEndOfFrame();
+        scrollRect.verticalNormalizedPosition = 0f;
     }
 
     void GetInput(string input) // player enters a number and it changes the scene
@@ -99,7 +108,11 @@ public class InputManager : MonoBehaviour
 
     public void Updateoutput(string msg)
     {
+        if (!Application.isPlaying) return;
         output += "\n" + msg;
         outputText.text = output;
+        if (isActiveAndEnabled)
+            StartCoroutine("ScrollToBottom");
+        
     }
 }
