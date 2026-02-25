@@ -159,6 +159,8 @@ MonoBehaviour:
   - {fileID: 1892575963}
   - {fileID: 2034680553}
   flashingText: {fileID: 817691338}
+  myComputerWindow: {fileID: 1632091081}
+  internetExplorerWindow: {fileID: 1632091081}
 --- !u!4 &40229162
 Transform:
   m_ObjectHideFlags: 0

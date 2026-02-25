@@ -12,6 +12,7 @@ public class TitleScene : MonoBehaviour
     public GameObject[] textObjects;
     public GameObject flashingText;
 
+
     void Start()
     {
         foreach (GameObject startText in textObjects)
@@ -19,6 +20,7 @@ public class TitleScene : MonoBehaviour
             startText.SetActive(false);
         }
         StartCoroutine(TitleText());
+
         
     }
 
@@ -41,25 +43,30 @@ public class TitleScene : MonoBehaviour
     }
 
 
-                        // this is where all the button linking is going to go
-    public void StartGame()
+                        // open scenes
+    public void StartGame() // STARTS BLOCKBUSTER
     {
         SceneManager.LoadScene(1);
     }
 
-    public void Minigame()
+    public void Minigame() // START ROLL A MAZE
     {
         SceneManager.LoadScene(2);
     }
 
-    public void Exit()
+    public void Exit() // EXITS THE GAME
     {
         SceneManager.LoadScene(3);
     }
 
-    public void Credits()
+    public void Credits() // OPENS CREDITS
     {
         SceneManager.LoadScene(4);
+    }
+
+    public void WindowsOS() // OPENS WINDOWS OS
+    {
+        SceneManager.LoadScene(5);
     }
 
     public void OpenLinkedin()
@@ -76,6 +83,10 @@ public class TitleScene : MonoBehaviour
     {
         StartCoroutine(RmText());
     }
+
+    // everything that opens and closes the windows have been moved to the window manager
+
+    
     IEnumerator RmText() 
     {
         Debug.Log("Quit the game");

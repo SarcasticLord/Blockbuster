@@ -37,6 +37,7 @@ public class InputManager : MonoBehaviour
         commands.Add("2");
         commands.Add("3");
         commands.Add("4");
+        commands.Add("5");
         
         output = outputText.text;
         userInput.onEndEdit.AddListener(GetInput);
@@ -91,6 +92,11 @@ public class InputManager : MonoBehaviour
                         case "4":
                             SceneManager.LoadScene(4);
                             Updateoutput("BLOCKBUSTER_CREDITS_SCREEN");
+                            break;
+
+                        case "5":
+                            SceneManager.LoadScene(5);
+                            Updateoutput("BOOTING_TO_DOORS");
                             break;
                     }
                 }
