@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void start()
+    {
+        Load();
+    }
+
     public void DecreaseLives()
     {
         lives--;
@@ -25,4 +30,28 @@ public class GameManager : MonoBehaviour
     {
         return lives;
     }
+
+    public void Save()
+    {
+        SaveState gameState = new SaveState();
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream aFile = File.Create(Application.persistentDataPath + "/player.save");
+        bf.Serialize(aFile, gameState);
+        aFile.Close();
+    }
+
+    void Load()
+    {
+        if (File.Exists(Application.persistentDataPath + "/player.save"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream aFile = File.Open(Application.persistentDataPath + "/player.save", FileMode.Open);
+            SaveState gameState = (SaveState)bf.Deserialize(aFile);
+            aFile.Close();
+
+        }
+       
+    }
+
+    
 }
