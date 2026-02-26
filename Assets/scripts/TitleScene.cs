@@ -46,17 +46,17 @@ public class TitleScene : MonoBehaviour
                         // open scenes
     public void StartGame() // STARTS BLOCKBUSTER
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void Minigame() // START ROLL A MAZE
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void Exit() // EXITS THE GAME
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(5);
     }
 
     public void Credits() // OPENS CREDITS
@@ -66,7 +66,7 @@ public class TitleScene : MonoBehaviour
 
     public void WindowsOS() // OPENS WINDOWS OS
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(1);
     }
 
     public void OpenLinkedin()

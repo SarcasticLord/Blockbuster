@@ -36,8 +36,8 @@ public class InputManager : MonoBehaviour
         commands.Add("1");
         commands.Add("2");
         commands.Add("3");
-        commands.Add("4");
-        commands.Add("5");
+        commands.Add("8");
+        commands.Add("9");
         
         output = outputText.text;
         userInput.onEndEdit.AddListener(GetInput);
@@ -74,13 +74,13 @@ public class InputManager : MonoBehaviour
                             Updateoutput("startgame");
                             break;
 
-                        case "1":
-                            SceneManager.LoadScene(1);
+                        case "9":
+                            SceneManager.LoadScene(2);
                             Updateoutput("STARTING_BLOCKBUSTER_SIMULATOR");
                             break;
                         
-                        case "2":
-                            SceneManager.LoadScene(2);
+                        case "8":
+                            SceneManager.LoadScene(3);
                             Updateoutput("STARTING_ROLLAMAZE_MINIGAME");
                             break;
 
@@ -89,13 +89,13 @@ public class InputManager : MonoBehaviour
                             Updateoutput("ERROR: EXIT_BLOCKBUSTER_SIMULATOR");
                             break;
 
-                        case "4":
+                        case "2":
                             SceneManager.LoadScene(4);
                             Updateoutput("BLOCKBUSTER_CREDITS_SCREEN");
                             break;
 
-                        case "5":
-                            SceneManager.LoadScene(5);
+                        case "1":
+                            SceneManager.LoadScene(1);
                             Updateoutput("BOOTING_TO_DOORS");
                             break;
                     }

@@ -10,6 +10,7 @@ public class WindowManager : MonoBehaviour
     public GameObject myComputerWindow;
     public GameObject internetExplorerWindow;
     public GameObject statsWindow;
+    public GameObject errorWindow;
 
     public GameObject[] MCText;
     public GameObject[] InternetText;
@@ -22,6 +23,7 @@ public class WindowManager : MonoBehaviour
         //myComputerWindow.SetActive(false);
         //internetExplorerWindow.SetActive(false);
         //statsWindow.SetActive(false);
+        errorWindow.SetActive(false);
 
         ResetText(MCText);
         ResetText(InternetText);
@@ -91,6 +93,23 @@ public class WindowManager : MonoBehaviour
         
         statsWindow.SetActive(false);
 
-        ResetText(StatsText);
+        //ResetText(StatsText);
+    }
+
+    public void OpenError() // OPENS error  WINDOW 
+    {
+        
+        errorWindow.SetActive(true);
+
+        // ResetText(StatsText);
+        // StartCoroutine(WindowText(StatsText));
+    }
+
+    public void CloseError() // close error window
+    {
+        
+        errorWindow.SetActive(false);
+
+        //ResetText(StatsText);
     }
 }

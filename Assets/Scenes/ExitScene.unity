@@ -159,8 +159,6 @@ MonoBehaviour:
   - {fileID: 1892575963}
   - {fileID: 2034680553}
   flashingText: {fileID: 817691338}
-  myComputerWindow: {fileID: 1632091081}
-  internetExplorerWindow: {fileID: 1632091081}
 --- !u!4 &40229162
 Transform:
   m_ObjectHideFlags: 0
@@ -676,7 +674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ERROR: EXIT_BLOCKBUSTER_SIMULATOR'
+  m_text: 'ERROR: EXIT_BLOCKBLASTER_SIMULATOR'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
   m_sharedMaterial: {fileID: -699112959996641730, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
@@ -812,7 +810,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Blockbuster
+  m_text: Blockblaster
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
   m_sharedMaterial: {fileID: -699112959996641730, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
