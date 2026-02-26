@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class SaveState
 {
-    public string currentRoom;
+    public string rollTime;
+    public string blockblasterTime;
 }
