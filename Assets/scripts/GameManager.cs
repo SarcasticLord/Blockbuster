@@ -1,9 +1,14 @@
 using UnityEngine;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
 
 public class GameManager : MonoBehaviour
 {
 
     private int lives = 3;
+    private float rollTime = -1f;
+    //private float blockblasterTime = -1f;
 
     public static GameManager instance = null;
     void Awake()
@@ -11,14 +16,17 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
         else if (instance != this)
-            Destroy(instance);
+            Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+        
+        
     }
 
-    void start()
+    void Start()
     {
         Load();
+        Debug.Log(Application.persistentDataPath);
     }
 
     public void DecreaseLives()
@@ -31,9 +39,13 @@ public class GameManager : MonoBehaviour
         return lives;
     }
 
+
     public void Save()
     {
         SaveState gameState = new SaveState();
+
+        gameState.rollTime = rollTime;
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream aFile = File.Create(Application.persistentDataPath + "/player.save");
         bf.Serialize(aFile, gameState);
@@ -49,6 +61,7 @@ public class GameManager : MonoBehaviour
             SaveState gameState = (SaveState)bf.Deserialize(aFile);
             aFile.Close();
 
+            rollTime = gameState.rollTime;
         }
        
     }

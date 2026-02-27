@@ -6,16 +6,21 @@ public class RollTimer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     float passedTime;
     bool isRunning = true;
+    private float rollTime = -1f;
     void Start()
     {
         
     }
+
 
     // Update is called once per frame
     void Update()
     {
         if (!isRunning) return;
         passedTime += Time.deltaTime;
+
+        
+
         int minutes = Mathf.FloorToInt(passedTime / 60);
         int seconds = Mathf.FloorToInt(passedTime % 60);
 
@@ -24,5 +29,6 @@ public class RollTimer : MonoBehaviour
     public void StopTimer()
     {
         isRunning = false;
+        GameManager.instance.Save();
     }
 }
