@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SaveState
 {
-    public int lives;
-    public float rollTime = -1f;
-   // public float blockblasterTime = -1f;
+    public string rollTime;
+    public string blockblasterTime;
 }
