@@ -11,10 +11,24 @@ public class WindowManager : MonoBehaviour
     public GameObject internetExplorerWindow;
     public GameObject statsWindow;
     public GameObject errorWindow;
+    public GameObject filesWindow;
+    public GameObject startmenu;
+    public GameObject rightClickMenu;
+    public GameObject RCNewMenu;
+    public GameObject newFolderIcon;
+    public GameObject newFolderWindow;
+    public RectTransform clickArea;
 
+    public GameObject RCfolderMenu;
+    public RectTransform clickAreaFolder;
+// work around for the "loading" effect on the windows
+// without this and resettext the text would stay forever
     public GameObject[] MCText;
     public GameObject[] InternetText;
     public GameObject[] StatsText;
+    public GameObject[] FileWindowText;
+    public GameObject[] StartMenuText;
+    public GameObject[] NewFolderWindow;
 
 
       // open/close windows in "os mode" open/close windows in "os mode" open/close windows in "os mode" open/close windows in "os mode" open/close windows in "os mode"
@@ -28,6 +42,29 @@ public class WindowManager : MonoBehaviour
         ResetText(MCText);
         ResetText(InternetText);
         ResetText(StatsText);
+        ResetText(FileWindowText);
+        ResetText(StartMenuText);
+        ResetText(NewFolderWindow);
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (RectTransformUtility.RectangleContainsScreenPoint(clickArea, Input.mousePosition))
+            {
+                rightClickMenu.SetActive(true);
+                rightClickMenu.transform.position = Input.mousePosition;
+            }
+            if (RectTransformUtility.RectangleContainsScreenPoint(clickAreaFolder, Input.mousePosition))
+            {
+                RCfolderMenu.SetActive(true);
+                RCfolderMenu.transform.position = Input.mousePosition;
+            }
+            
+        }
+
+        
     }
 
     void ResetText(GameObject[] textArray) // keeps the text hidden when the ui isnt active
@@ -93,16 +130,13 @@ public class WindowManager : MonoBehaviour
         
         statsWindow.SetActive(false);
 
-        //ResetText(StatsText);
+        ResetText(StatsText);
     }
 
     public void OpenError() // OPENS error  WINDOW 
     {
         
         errorWindow.SetActive(true);
-
-        // ResetText(StatsText);
-        // StartCoroutine(WindowText(StatsText));
     }
 
     public void CloseError() // close error window
@@ -110,6 +144,80 @@ public class WindowManager : MonoBehaviour
         
         errorWindow.SetActive(false);
 
-        //ResetText(StatsText);
+    }
+
+    public void OpenFilesWindow() // OPENS files  WINDOW 
+    {
+        
+        filesWindow.SetActive(true);
+
+        ResetText(FileWindowText);
+        StartCoroutine(WindowText(FileWindowText));
+
+        
+    }
+
+    public void OpenRCNewMenu() // OPENS files  WINDOW 
+    {
+        
+        RCNewMenu.SetActive(true);
+
+        // ResetText(FileWindowText);
+        // StartCoroutine(WindowText(FileWindowText));
+
+        
+    }
+    public void NewFolderIcon()
+    {
+        newFolderIcon.SetActive(true);
+    }
+    public void DeleteFolderIcon()
+    {
+        newFolderIcon.SetActive(false);
+    }
+
+    public void OpenNewFolderWindow() // OPENS files  WINDOW 
+    {
+        
+        newFolderWindow.SetActive(true);
+
+        ResetText(NewFolderWindow);
+        StartCoroutine(WindowText(NewFolderWindow));
+
+    }
+    public void CloseNewFolderWindow() // close files window
+    {
+        
+        newFolderWindow.SetActive(false);
+
+        ResetText(NewFolderWindow);
+    }
+
+
+    public void CloseFilesWindow() // close files window
+    {
+        
+        filesWindow.SetActive(false);
+
+        ResetText(FileWindowText);
+    }
+
+    public void OpenStart() // OPENS start  WINDOW 
+    {
+        
+        startmenu.SetActive(true);
+
+        ResetText(StartMenuText);
+        StartCoroutine(WindowText(StartMenuText));
+    }
+
+    public void CloseStart() // close start window
+    {
+        
+        startmenu.SetActive(false);
+        rightClickMenu.SetActive(false);
+        RCfolderMenu.SetActive(false);
+
+        ResetText(StartMenuText);
     }
 }
