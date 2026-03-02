@@ -51,16 +51,18 @@ public class WindowManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (RectTransformUtility.RectangleContainsScreenPoint(clickArea, Input.mousePosition))
+            if (RectTransformUtility.RectangleContainsScreenPoint(clickAreaFolder, Input.mousePosition)) // right clickig on the folder opens the delete menu and closes the new menu
+            {
+                RCfolderMenu.SetActive(true);
+                RCNewMenu.SetActive(false);
+                RCfolderMenu.transform.position = Input.mousePosition;
+            }
+            else if (RectTransformUtility.RectangleContainsScreenPoint(clickArea, Input.mousePosition))
             {
                 rightClickMenu.SetActive(true);
                 rightClickMenu.transform.position = Input.mousePosition;
             }
-            if (RectTransformUtility.RectangleContainsScreenPoint(clickAreaFolder, Input.mousePosition))
-            {
-                RCfolderMenu.SetActive(true);
-                RCfolderMenu.transform.position = Input.mousePosition;
-            }
+             
             
         }
 
@@ -170,6 +172,8 @@ public class WindowManager : MonoBehaviour
     public void NewFolderIcon()
     {
         newFolderIcon.SetActive(true);
+        rightClickMenu.SetActive(false);
+        RCfolderMenu.SetActive(false);
     }
     public void DeleteFolderIcon()
     {
