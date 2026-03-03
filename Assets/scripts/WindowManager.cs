@@ -18,6 +18,8 @@ public class WindowManager : MonoBehaviour
     public GameObject newFolderIcon;
     public GameObject newFolderWindow;
     public RectTransform clickArea;
+    public GameObject taskbarFiles;
+    public GameObject taskbarComputer;
 
     public GameObject RCfolderMenu;
     public RectTransform clickAreaFolder;
@@ -38,6 +40,9 @@ public class WindowManager : MonoBehaviour
         //internetExplorerWindow.SetActive(false);
         //statsWindow.SetActive(false);
         errorWindow.SetActive(false);
+        taskbarFiles.SetActive(false);
+        taskbarComputer.SetActive(false);
+
 
         ResetText(MCText);
         ResetText(InternetText);
@@ -88,6 +93,7 @@ public class WindowManager : MonoBehaviour
     public void OpenMCwindow() // OPENS SETTINGS WINDOW 
     {
         myComputerWindow.SetActive(true);
+        taskbarComputer.SetActive(true);
 
         ResetText(MCText);
         StartCoroutine(WindowText(MCText));
@@ -97,6 +103,7 @@ public class WindowManager : MonoBehaviour
     {
         
         myComputerWindow.SetActive(false);
+        taskbarComputer.SetActive(false);
 
         ResetText(MCText);
     }
@@ -152,6 +159,7 @@ public class WindowManager : MonoBehaviour
     {
         
         filesWindow.SetActive(true);
+        taskbarFiles.SetActive(true);
 
         ResetText(FileWindowText);
         StartCoroutine(WindowText(FileWindowText));
@@ -178,6 +186,8 @@ public class WindowManager : MonoBehaviour
     public void DeleteFolderIcon()
     {
         newFolderIcon.SetActive(false);
+        rightClickMenu.SetActive(false);
+        RCfolderMenu.SetActive(false);
     }
 
     public void OpenNewFolderWindow() // OPENS files  WINDOW 
@@ -202,6 +212,7 @@ public class WindowManager : MonoBehaviour
     {
         
         filesWindow.SetActive(false);
+        taskbarFiles.SetActive(false);
 
         ResetText(FileWindowText);
     }
