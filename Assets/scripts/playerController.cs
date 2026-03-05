@@ -30,30 +30,58 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string sprint = "sprint";
 
     private InputAction movementAction;
-    private InputAction rotationACtion;
+    private InputAction rotationAction;
     private InputAction jumpAction;
     private InputAction sprintAction;
 
-   private Vector2 MovementInput { get; private set; }
-   private Vector2 RotationInput { get; private set; }
-   private bool JumpInput { get; private set; }
-   private bool SprintInput { get; private set; }
+   public Vector2 MovementInput { get; private set; }
+   public Vector2 RotationInput { get; private set; }
+   public bool JumpInput { get; private set; }
+   public bool SprintInput { get; private set; }
 
     void Awake()
     {
-        //InputActionMap mapRefrence = playerControls.FindActionMap(actionMapName);
+        InputActionMap mapRefrence = playerControls.FindActionMap(actionMapName);
+        
+        movementAction = mapRefrence.FindAction(movement);
+        rotationAction = mapRefrence.FindAction(rotation);
+        jumpAction = mapRefrence.FindAction(jump);
+        sprintAction = mapRefrence.FindAction(sprint);
 
-        // 8 minutes in the video
+        SubscribeActionValuesToInputEvents();
 
+    }
+
+    private void SubscribeActionValuesToInputEvents()
+    {
+        movementAction.performed += inputInfo => MovementInput = inputInfo.ReadValue<Vector2>();
+        movementAction.canceled += inputInfo => MovementInput = Vector2.zero;
+
+        rotationAction.performed += inputInfo => RotationInput = inputInfo.ReadValue<Vector2>();
+        rotationAction.canceled += inputInfo => RotationInput = Vector2.zero;
+
+        jumpAction.performed += inputInfo => JumpInput = true;
+        jumpAction.canceled += inputInfo => JumpInput = false;
+
+        sprintAction.performed += inputInfo => SprintInput = true;
+        sprintAction.canceled += inputInfo => SprintInput = false;
+    }
+
+    private void OnEnable()
+    {
+        playerControls.FindActionMap(actionMapName).Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.FindActionMap(actionMapName).Disable();
     }
 
 
 
     void Start()
     {
-        rb = GetComponent <Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked; 
-        Cursor.visible = false;
+        
         
         
         stockCount = 0;

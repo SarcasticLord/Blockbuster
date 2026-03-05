@@ -30,10 +30,12 @@ public class TrashSpawner : MonoBehaviour
             {
                 trashExists = Instantiate(Trash, TrashPoint.position, facingRight ? TrashPoint.rotation : Quaternion.Euler(-90, 0, 0));
 
-                yield return new WaitForSeconds(10f); // this is currently broken the game crashes after 10 seconds
+                
             }
-            
+            yield return new WaitForSeconds(10f); // this is currently broken the game crashes after 10 seconds
         }
         
+        
     }
+    
 }
