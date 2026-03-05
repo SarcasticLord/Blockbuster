@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float movementX;
     private float movementZ;
+
+    
     private int stockCount;
     private int netflixCount;
 
@@ -19,6 +21,32 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
     //public GameObject loseTextObject;
     public Timer timer;
+
+    [SerializeField] private InputActionAsset playerControls;
+    [SerializeField] private string actionMapName = "Game";
+    [SerializeField] private string movement = "Move";
+    [SerializeField] private string rotation = "rotation";
+    [SerializeField] private string jump = "jump";
+    [SerializeField] private string sprint = "sprint";
+
+    private InputAction movementAction;
+    private InputAction rotationACtion;
+    private InputAction jumpAction;
+    private InputAction sprintAction;
+
+   private Vector2 MovementInput { get; private set; }
+   private Vector2 RotationInput { get; private set; }
+   private bool JumpInput { get; private set; }
+   private bool SprintInput { get; private set; }
+
+    void Awake()
+    {
+        //InputActionMap mapRefrence = playerControls.FindActionMap(actionMapName);
+
+        // 8 minutes in the video
+
+    }
+
 
 
     void Start()
@@ -34,16 +62,6 @@ public class PlayerController : MonoBehaviour
         // SetNetflixText();
         winTextObject.SetActive(false);
         //loseTextObject.SetActive(false);
-    }
-
-    void Update()
-    {
-        
-    }
-
-    void FixedUpdate()
-    {
-
     }
 
     void Objectives() 
