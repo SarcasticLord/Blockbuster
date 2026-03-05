@@ -31,4 +31,10 @@ public class PickupController : MonoBehaviour
             yield return new WaitForSeconds(.09f);
         }
     }
+
+    public void StopRotating()
+    {
+        StopAllCoroutines();
+        enabled = false;
+    }
 }

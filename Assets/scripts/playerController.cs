@@ -7,20 +7,6 @@ public class PlayerController : MonoBehaviour
 
 {
     private Rigidbody rb;
-    private float movementX;
-    private float movementZ;
-
-    
-    private int stockCount;
-    private int netflixCount;
-
-
-    public TextMeshProUGUI stockedText;
-    public TextMeshProUGUI netflixText;
-
-    public GameObject winTextObject;
-    //public GameObject loseTextObject;
-    public Timer timer;
 
     [SerializeField] private InputActionAsset playerControls;
     [SerializeField] private string actionMapName = "Game";
@@ -38,6 +24,19 @@ public class PlayerController : MonoBehaviour
    public Vector2 RotationInput { get; private set; }
    public bool JumpInput { get; private set; }
    public bool SprintInput { get; private set; }
+
+   private int stockCount;
+   private int netflixCount;
+
+
+    public TextMeshProUGUI stockedText;
+    public TextMeshProUGUI netflixText;
+
+    public GameObject winTextObject;
+    //public GameObject loseTextObject;
+    public Timer timer;
+    public Transform BoxSnap;
+    private GameObject holdBox;
 
     void Awake()
     {
@@ -112,10 +111,15 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other) // player hits the pickups
     {
 
-        if (other.gameObject.CompareTag("pickUp"))
+        if (other.gameObject.CompareTag("pickUp") && holdBox == null)
         {
-            other.gameObject.SetActive(false);
-            stockCount = stockCount + 1;
+            holdBox = other.gameObject;
+
+            other.gameObject.transform.position = BoxSnap.position;
+            other.gameObject.transform.rotation = BoxSnap.rotation;
+            other.gameObject.transform.SetParent(BoxSnap);
+
+            other.GetComponent<PickupController>().StopRotating();
             Objectives();
 
         }
