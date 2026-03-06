@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -27,10 +27,12 @@ public class PlayerController : MonoBehaviour
 
    private int stockCount;
    private int netflixCount;
+   private int trashCount;
 
 
     public TextMeshProUGUI stockedText;
     public TextMeshProUGUI netflixText;
+    public TextMeshProUGUI trashText;
 
     public GameObject winTextObject;
     //public GameObject loseTextObject;
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         
-        
+        Objectives();
         
         stockCount = 0;
         netflixCount = 0;
@@ -91,21 +93,38 @@ public class PlayerController : MonoBehaviour
         //loseTextObject.SetActive(false);
     }
 
-    void Objectives() 
+    public void Objectives() 
     {
-        stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
-        netflixText.text = "Netflix employees stopped: " + netflixCount.ToString() + "/10";
+        if (stockCount >= 10 && netflixCount >= 10 && trashCount >= 10);  // when all three conditions are met end the game
+        winTextObject.SetActive(true);
 
-        if (stockCount >= 10 && netflixCount >= 10) // both objectives are done then win the game
+
+        if (timer != null)
         {
-            winTextObject.SetActive(true);
-
-
-            if (timer != null)
-            {
-                timer.StopTimer();
-            }
+            timer.StopTimer();
         }
+        
+    }
+
+    public void StockObjective()
+    {
+        stockCount++;
+        stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
+        Objectives();
+    }
+
+    public void MetflicksObjective()
+    {
+        netflixCount++;
+        netflixText.text = "Metflicks employees stopped: " + netflixCount.ToString() + "/10";
+        Objectives();
+    }
+
+    public void TrashObjective()
+    {
+        trashCount++;
+        trashText.text = "Trash picked up: " + trashCount.ToString() + "/10";
+        Objectives();
     }
 
     void OnTriggerEnter(Collider other) // player hits the pickups
@@ -120,12 +139,11 @@ public class PlayerController : MonoBehaviour
             other.gameObject.transform.SetParent(BoxSnap);
 
             other.GetComponent<PickupController>().StopRotating();
-            Objectives();
+            
 
         }
-
-
     }
+
 
     void OnDestroy() // when the player is killed restart the scene
     {

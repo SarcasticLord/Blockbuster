@@ -706,6 +706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797307576982021762}
   - component: {fileID: -5933773517776482688}
+  - component: {fileID: 2925657084716604413}
   m_Layer: 0
   m_Name: shelf2
   m_TagString: Untagged
@@ -760,6 +761,26 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.40206718, y: 3.5788143, z: 2.3511477}
   m_Center: {x: 0.11498737, y: -1.4703766, z: -0.008399487}
+--- !u!114 &2925657084716604413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512911911740198670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c35d37d9bf61eb47af89900f2761193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shelves:
+  - {fileID: 2368229198728570528, guid: a92ee784bffb39e4ca67052195fbe383, type: 3}
+  - {fileID: 3252542346385091710, guid: b714418b2825cef4bbf37795783896af, type: 3}
+  - {fileID: 6512911911740198670}
+  - {fileID: 8099021707476670238, guid: 9f45f78aabcba884585db9900ee9cb26, type: 3}
+  - {fileID: 8885793285757229056, guid: 1d0860f6265a3424bb3a25610769ac36, type: 3}
+  - {fileID: 3183995183117131744, guid: 0d9cba268ae41ae48bf1204bb987d366, type: 3}
+  shelfIndex: 2
 --- !u!1 &7112137620310727224
 GameObject:
   m_ObjectHideFlags: 0
