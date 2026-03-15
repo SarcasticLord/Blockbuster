@@ -100,6 +100,12 @@ public class TitleScene : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void CriticalError() // critical error debug
+    {
+        SceneManager.LoadScene(7);
+    }
+
+
     
 
     public void OpenLinkedin()

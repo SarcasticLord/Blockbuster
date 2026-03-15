@@ -76,7 +76,7 @@ public class RollPlayerController : MonoBehaviour
 
     void BacktoTitle()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
 }
