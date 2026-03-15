@@ -472,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677461432400620503, guid: c7fc205814c2da64ba82726c009d764d, type: 3}
       propertyPath: m_text
-      value: POWER_ON_SELF_TEST... COMPLETE
+      value: Starting SarcasticOS...
       objectReference: {fileID: 0}
     - target: {fileID: 4677461432400620503, guid: c7fc205814c2da64ba82726c009d764d, type: 3}
       propertyPath: m_fontSize
@@ -1221,7 +1221,6 @@ MonoBehaviour:
   - DRAM Size is 32768 MB
   - 'USB Device total: 6 KBDs, 3M MICE, 1 MASS, 4 HUBs'
   - 'USB MASS #0: USB DISK 3.0 PMAP'
-  - Detected ATA/ATAPI Dedices...
   - '[     OK     ]     Starting SarcasticOS'
   - '[     OK     ]     Initializing system kernel'
   - '[     OK     ]     Detecting hardware devices'
@@ -1258,7 +1257,7 @@ MonoBehaviour:
   - "[     OK     ]     V\xE4lkommen"
   - '[ CRITICAL ]  FILE_SYSTEM_CRITICAL_ERROR'
   - '[ CRITICAL ]  SYSTEM_SECURITY_CRITICAL_ERROR'
-  - '[ CRITICAL ]  SYSTEM_INTELEGENCE_9999999'
+  - '[ CRITICAL ]  SYSTEM_INSTABILITY: 9999999'
   - '[ CRITICAL ]  RUTROH_PROTOCALL_FAILED'
   - '[ CRITICAL ]  RUTROH_PROTOCALL_FAILED'
 --- !u!1 &1552381905
