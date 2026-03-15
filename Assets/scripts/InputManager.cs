@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour
     public TMP_Text inputText; // part of the input field where user enters response
     public TMP_Text placeHolderText; // part of the input field for initial placeholder text
 
-    public ScrollRect scrollRect; // controls how our story scrolls
+    public ScrollRect scrollRect; // controls how our cmd scrolls
     
     private string output; // holds the output to display
     private List<string> commands = new List<string>();
@@ -75,22 +75,22 @@ public class InputManager : MonoBehaviour
                             break;
 
                         case "9":
-                            SceneManager.LoadScene(2);
+                            SceneManager.LoadScene(3);
                             Updateoutput("STARTING_BLOCKBUSTER_SIMULATOR");
                             break;
                         
                         case "8":
-                            SceneManager.LoadScene(3);
+                            SceneManager.LoadScene(4);
                             Updateoutput("STARTING_ROLLAMAZE_MINIGAME");
                             break;
 
                         case "3":
-                            SceneManager.LoadScene(3);
+                            SceneManager.LoadScene(6);
                             Updateoutput("ERROR: EXIT_BLOCKBUSTER_SIMULATOR");
                             break;
 
                         case "2":
-                            SceneManager.LoadScene(4);
+                            SceneManager.LoadScene(5);
                             Updateoutput("BLOCKBUSTER_CREDITS_SCREEN");
                             break;
 

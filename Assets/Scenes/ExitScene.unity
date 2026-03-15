@@ -158,7 +158,9 @@ MonoBehaviour:
   - {fileID: 817691338}
   - {fileID: 1892575963}
   - {fileID: 2034680553}
-  flashingText: {fileID: 817691338}
+  flashingText:
+  - {fileID: 817691338}
+  clickAnywhere: {fileID: 0}
 --- !u!4 &40229162
 Transform:
   m_ObjectHideFlags: 0

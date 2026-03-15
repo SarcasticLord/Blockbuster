@@ -9534,7 +9534,8 @@ MonoBehaviour:
   - {fileID: 656219364}
   - {fileID: 1205121946}
   - {fileID: 1412049677}
-  flashingText: {fileID: 2069132601}
+  flashingText: []
+  clickAnywhere: {fileID: 0}
 --- !u!114 &1749481078
 MonoBehaviour:
   m_ObjectHideFlags: 0

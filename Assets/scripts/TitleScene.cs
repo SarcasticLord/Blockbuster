@@ -10,7 +10,9 @@ public class TitleScene : MonoBehaviour
 {
 
     public GameObject[] textObjects;
-    public GameObject flashingText;
+    public GameObject[] flashingText;
+
+    public RectTransform clickAnywhere;
 
 
     void Start()
@@ -19,9 +21,25 @@ public class TitleScene : MonoBehaviour
         {
             startText.SetActive(false);
         }
+
+        foreach (GameObject flashText in flashingText)
+        {
+            flashText.SetActive(false);
+        }
         StartCoroutine(TitleText());
 
         
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (RectTransformUtility.RectangleContainsScreenPoint(clickAnywhere, Input.mousePosition)) // right clickig on the folder opens the delete menu and closes the new menu
+            {
+                SceneManager.LoadScene(1);
+            } 
+        }
     }
 
     IEnumerator TitleText() 
@@ -34,40 +52,50 @@ public class TitleScene : MonoBehaviour
 
         while (true) // this flashes text
         {
-           flashingText.SetActive(false);
-           yield return new WaitForSeconds(.25f);
+           foreach (GameObject flashText in flashingText)
+            {
+                flashText.SetActive(false);
+            }
+            yield return new WaitForSeconds(.25f);
 
-           flashingText.SetActive(true);
-           yield return new WaitForSeconds(.75f); 
+            foreach (GameObject flashText in flashingText)
+            {
+                flashText.SetActive(true);
+            }
+            yield return new WaitForSeconds(.75f);
+           
+            
         }
     }
 
 
-                        // open scenes
+                        // open scenes / if you change anything in here you will need to relink everything 
     public void StartGame() // STARTS BLOCKBUSTER
-    {
-        SceneManager.LoadScene(2);
-    }
-
-    public void Minigame() // START ROLL A MAZE
     {
         SceneManager.LoadScene(3);
     }
 
+    public void Minigame() // START ROLL A MAZE
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void Exit() // EXITS THE GAME
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 
     public void Credits() // OPENS CREDITS
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 
     public void WindowsOS() // OPENS WINDOWS OS
     {
         SceneManager.LoadScene(1);
     }
+
+    
 
     public void OpenLinkedin()
     {
