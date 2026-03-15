@@ -1704,7 +1704,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1482889696}
         m_TargetAssemblyTypeName: TitleScene, Assembly-CSharp
-        m_MethodName: WindowsOS
+        m_MethodName: POST
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2918,7 +2918,8 @@ MonoBehaviour:
   - {fileID: 20834971}
   - {fileID: 455620832}
   - {fileID: 1561043743}
-  flashingText: []
+  flashingText:
+  - {fileID: 1414690493}
   clickAnywhere: {fileID: 0}
 --- !u!4 &1482889697
 Transform:

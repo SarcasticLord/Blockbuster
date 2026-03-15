@@ -472,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677461432400620503, guid: c7fc205814c2da64ba82726c009d764d, type: 3}
       propertyPath: m_text
-      value: STARTING_BOOT_SARCASTICOS
+      value: POWER_ON_SELF_TEST... COMPLETE
       objectReference: {fileID: 0}
     - target: {fileID: 4677461432400620503, guid: c7fc205814c2da64ba82726c009d764d, type: 3}
       propertyPath: m_fontSize
@@ -1212,10 +1212,17 @@ MonoBehaviour:
   scrollRect: {fileID: 1294203965}
   content: {fileID: 1422401151}
   TerminalLines: {fileID: 42398892}
-  delay: 0.1
+  delay: 0.05
   lines:
+  - STARTING_BOOT_SARCASTICOS
+  - E7C84AMS.1B0     08/11/1998
+  - 'AMD Ryzen 5 5600X 6-Core Processor          , Speed: 100.00x42.7=4270.00 MHz'
+  - DRAM Frequency for DDR4 2400 MHz(Dual Channel)
+  - DRAM Size is 32768 MB
+  - 'USB Device total: 6 KBDs, 3M MICE, 1 MASS, 4 HUBs'
+  - 'USB MASS #0: USB DISK 3.0 PMAP'
+  - Detected ATA/ATAPI Dedices...
   - '[     OK     ]     Starting SarcasticOS'
-  - '[     OK     ]     Power On Self-Test'
   - '[     OK     ]     Initializing system kernel'
   - '[     OK     ]     Detecting hardware devices'
   - '[     OK     ]     Checking System_Memory'
@@ -1226,27 +1233,34 @@ MonoBehaviour:
   - '[     OK     ]      Initializing firewall'
   - '[     OK     ]     Starting File_System'
   - '[ FAILED ]     Starting Security_Manager'
+  - ' '
   - '[     OK     ]     Loading Assets'
   - '[     OK     ]     Starting BlockBlaster_Minigame'
   - '[     OK     ]     Starting RollaMaze_Minigame'
+  - '[     OK     ]     Starting Minigame_3'
+  - '[     OK     ]     Starting Minigame_4'
+  - '[     OK     ]     Starting Minigame_5'
+  - '[     OK     ]     Starting Minigame_6'
+  - '[     OK     ]     Minigame_Integrity'
   - '[     OK     ]     Starting Critical_Error_Checker'
   - '[     OK     ]     Starting Internet'
   - '[     OK     ]     Starting Game_Credits'
-  - '[     OK     ]     Minigame_Integrity'
   - '[     OK     ]     Starting Command_Terminal'
   - '[     OK     ]     Starting Game_Statistics'
-  - '[     OK     ]     Checking_System_Sanity'
   - '[     OK     ]     Starting Start_Menu'
+  - '[     OK     ]     Checking_System_Sanity'
   - '[     OK     ]     Starting Shameless_Plugs'
+  - ' '
   - '[     OK     ]     Loading User_Preferencess'
   - '[     OK     ]     Launching System_Interface'
   - '[     OK     ]     Finalizing Startup Tasks'
   - '[     OK     ]     System initialization complete'
   - "[     OK     ]     V\xE4lkommen"
   - '[ CRITICAL ]  FILE_SYSTEM_CRITICAL_ERROR'
-  - '[ CRITICAL ]  FILE_SYSTEM_CRITICAL_ERROR'
-  - '[ CRITICAL ]  FILE_SYSTEM_CRITICAL_ERROR'
-  - '[ CRITICAL ]  FILE_SYSTEM_CRITICAL_ERROR'
+  - '[ CRITICAL ]  SYSTEM_SECURITY_CRITICAL_ERROR'
+  - '[ CRITICAL ]  SYSTEM_INTELEGENCE_9999999'
+  - '[ CRITICAL ]  RUTROH_PROTOCALL_FAILED'
+  - '[ CRITICAL ]  RUTROH_PROTOCALL_FAILED'
 --- !u!1 &1552381905
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject loseTextObject;
     public Timer timer;
     public Transform BoxSnap;
+    public Transform BroomSnap;
     private GameObject holdBox;
 
     void Awake()
@@ -140,6 +141,16 @@ public class PlayerController : MonoBehaviour
 
             other.GetComponent<PickupController>().StopRotating();
             
+
+        }
+
+        if (other.gameObject.CompareTag("broom") && holdBox == null)
+        {
+            holdBox = other.gameObject;
+
+            other.gameObject.transform.position = BroomSnap.position;
+            other.gameObject.transform.rotation = BroomSnap.rotation;
+            other.gameObject.transform.SetParent(BroomSnap);
 
         }
     }

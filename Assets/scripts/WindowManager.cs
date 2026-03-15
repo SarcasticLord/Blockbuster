@@ -67,6 +67,12 @@ public class WindowManager : MonoBehaviour
                 rightClickMenu.SetActive(true);
                 rightClickMenu.transform.position = Input.mousePosition;
             }
+
+            // else if (RectTransformUtility.RectangleContainsScreenPoint(RCmaze, Input.mousePosition))
+            // {
+            //     rightClickMenu.SetActive(true);
+            //     rightClickMenu.transform.position = Input.mousePosition;
+            // }
              
             
         }

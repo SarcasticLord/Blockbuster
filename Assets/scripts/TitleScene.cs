@@ -92,6 +92,11 @@ public class TitleScene : MonoBehaviour
 
     public void WindowsOS() // OPENS WINDOWS OS
     {
+        SceneManager.LoadScene(2);
+    }
+
+    public void POST() // OPENS POST
+    {
         SceneManager.LoadScene(1);
     }
 
