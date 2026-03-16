@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class WindowManager : MonoBehaviour
 {
+    public NotificationManager notifManager;
 
     public GameObject myComputerWindow;
     public GameObject internetExplorerWindow;
     public GameObject statsWindow;
-    public GameObject errorWindow;
+    
     public GameObject filesWindow;
     public GameObject startmenu;
     public GameObject rightClickMenu;
@@ -39,7 +40,7 @@ public class WindowManager : MonoBehaviour
         //myComputerWindow.SetActive(false);
         //internetExplorerWindow.SetActive(false);
         //statsWindow.SetActive(false);
-        errorWindow.SetActive(false);
+        
         taskbarFiles.SetActive(false);
         taskbarComputer.SetActive(false);
 
@@ -50,6 +51,9 @@ public class WindowManager : MonoBehaviour
         ResetText(FileWindowText);
         ResetText(StartMenuText);
         ResetText(NewFolderWindow);
+
+        Cursor.lockState = CursorLockMode.None; 
+        Cursor.visible = true;
     }
 
     void Update()
@@ -111,6 +115,8 @@ public class WindowManager : MonoBehaviour
         myComputerWindow.SetActive(false);
         taskbarComputer.SetActive(false);
 
+        //notifManager.OpenRollaMazeNotif();
+
         ResetText(MCText);
     }
 
@@ -148,18 +154,7 @@ public class WindowManager : MonoBehaviour
         ResetText(StatsText);
     }
 
-    public void OpenError() // OPENS error  WINDOW 
-    {
-        
-        errorWindow.SetActive(true);
-    }
-
-    public void CloseError() // close error window
-    {
-        
-        errorWindow.SetActive(false);
-
-    }
+    
 
     public void OpenFilesWindow() // OPENS files  WINDOW 
     {
@@ -178,9 +173,6 @@ public class WindowManager : MonoBehaviour
         
         RCNewMenu.SetActive(true);
 
-        // ResetText(FileWindowText);
-        // StartCoroutine(WindowText(FileWindowText));
-
         
     }
     public void NewFolderIcon()
@@ -188,6 +180,7 @@ public class WindowManager : MonoBehaviour
         newFolderIcon.SetActive(true);
         rightClickMenu.SetActive(false);
         RCfolderMenu.SetActive(false);
+        
     }
     public void DeleteFolderIcon()
     {

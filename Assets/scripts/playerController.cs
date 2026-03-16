@@ -153,7 +153,14 @@ public class PlayerController : MonoBehaviour
             other.gameObject.transform.SetParent(BroomSnap);
 
         }
+
+        if (other.gameObject.CompareTag("exit")) // colliding with the wall debug
+        {
+            SceneManager.LoadScene(2);
+        }
     }
+
+
 
 
     void OnDestroy() // when the player is killed restart the scene

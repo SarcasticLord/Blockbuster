@@ -72,16 +72,19 @@ public class TitleScene : MonoBehaviour
                         // open scenes / if you change anything in here you will need to relink everything 
     public void StartGame() // STARTS BLOCKBUSTER
     {
+        SaveState.lastScene = "Blockblaster";
         SceneManager.LoadScene(3);
     }
 
     public void Minigame() // START ROLL A MAZE
     {
+        SaveState.lastScene = "RollaMaze";
         SceneManager.LoadScene(4);
     }
 
     public void Exit() // EXITS THE GAME
     {
+        SaveState.lastScene = "Exit";
         SceneManager.LoadScene(6);
     }
 
@@ -102,6 +105,7 @@ public class TitleScene : MonoBehaviour
 
     public void CriticalError() // critical error debug
     {
+        SaveState.lastScene = "CritError";
         SceneManager.LoadScene(7);
     }
 
@@ -143,6 +147,7 @@ public class TitleScene : MonoBehaviour
 
     public void ToTitle()
     {
+        SaveState.lastScene = "Title";
         SceneManager.LoadScene(0);
     }
 }
