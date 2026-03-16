@@ -22,7 +22,10 @@ public class ShelfSwapping : MonoBehaviour
     {
         if (other.CompareTag("pickUp"))
         {
+            if (shelfIndex >= shelves.Length - 1) return;
+
             GameObject box = other.gameObject;
+            
             if (shelfIndex < shelves.Length - 1)
             {
                 GameObject newShelf = Instantiate(shelves[shelfIndex +1], transform.position, transform.rotation);
