@@ -6,7 +6,7 @@ public class TrashSpawner : MonoBehaviour
 {
     public Transform TrashPoint;
     public GameObject Trash; 
-    public GameObject trashExists;
+    public GameObject TrashExists;
 
     public bool facingRight = true;
 
@@ -14,6 +14,7 @@ public class TrashSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(TrashSpawn());
+        
     }
 
     // Update is called once per frame
@@ -26,16 +27,14 @@ public class TrashSpawner : MonoBehaviour
     {
         while (true)
         {
-            if (trashExists == null)
+            if (TrashExists == null)
             {
-                trashExists = Instantiate(Trash, TrashPoint.position, facingRight ? TrashPoint.rotation : Quaternion.Euler(-90, 0, 0));
+                TrashExists = Instantiate(Trash, TrashPoint.position, facingRight ? TrashPoint.rotation : Quaternion.Euler(-90, 0, 0));
 
                 
             }
-            yield return new WaitForSeconds(10f); // this is currently broken the game crashes after 10 seconds
-        }
-        
-        
+            yield return new WaitForSeconds(10f);  
+        } 
     }
     
 }
