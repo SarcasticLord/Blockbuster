@@ -29,7 +29,7 @@ public class TrashSpawner : MonoBehaviour
         {
             if (TrashExists == null)
             {
-                TrashExists = Instantiate(Trash, TrashPoint.position, facingRight ? TrashPoint.rotation : Quaternion.Euler(-90, 0, 0));
+                TrashExists = Instantiate(Trash, TrashPoint.position, facingRight ? TrashPoint.rotation : Quaternion.Euler(0, 0, 0));
 
                 
             }
