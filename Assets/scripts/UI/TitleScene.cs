@@ -82,15 +82,21 @@ public class TitleScene : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void TerminalGame() // START TERMINAL GAME
+    {
+        SaveState.lastScene = "TerminalGame";
+        SceneManager.LoadScene(5);
+    }
+
     public void Exit() // EXITS THE GAME
     {
         SaveState.lastScene = "Exit";
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(7);
     }
 
     public void Credits() // OPENS CREDITS
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 
     public void WindowsOS() // OPENS WINDOWS OS
@@ -106,7 +112,7 @@ public class TitleScene : MonoBehaviour
     public void CriticalError() // critical error debug
     {
         SaveState.lastScene = "CritError";
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(8);
     }
 
 

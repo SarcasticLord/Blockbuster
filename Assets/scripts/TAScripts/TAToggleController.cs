@@ -44,7 +44,7 @@ public class TAToggleController : MonoBehaviour
             placeHolderText.color = Color.white;
             toggleText.color = Color.white;
             musicText.color = Color.white;
-            TAInputManager.instance.UpdateStory("Turned on darkmode.");
+            TAInputManager.instance.UpdateTerminal("Turned on darkmode.");
         }
         else
         {   
@@ -55,7 +55,7 @@ public class TAToggleController : MonoBehaviour
             placeHolderText.color = Color.white;
             toggleText.color = Color.black;
             musicText.color = Color.black;
-            TAInputManager.instance.UpdateStory("MY EYES IT BURNSSSS!!!!");
+            TAInputManager.instance.UpdateTerminal("MY EYES IT BURNSSSS!!!!");
         }
     }
 

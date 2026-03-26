@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows;
@@ -31,12 +32,13 @@ public class TAInputManager : MonoBehaviour
 
     void Start()
     {
-        commands.Add("go");
-        commands.Add("get");
+        commands.Add("open");
+        commands.Add("download");
         commands.Add("restart");
         commands.Add("save");
         commands.Add("inventory");
         commands.Add("commands");
+        commands.Add("exit");
 
         story = storyText.text;
         userInput.onEndEdit.AddListener(GetInput);
@@ -66,15 +68,15 @@ public class TAInputManager : MonoBehaviour
             {
                 if (commands.Contains(parts[0]))
                 {
-                    UpdateStory(input);
-                    if (parts[0] == "go")
+                    UpdateTerminal(input);
+                    if (parts[0] == "open")
                     {
                         if (TANavigationManager.instance.SwitchRooms(parts[1]))
-                            Debug.Log("direction exists");
+                            Debug.Log("That file exists");
                         else
-                            UpdateStory("direction doesent exist or is locked");
+                            UpdateTerminal("That file doesnt exist or permission denied");
                     }
-                    else if (parts[0] == "get")
+                    else if (parts[0] == "download")
                     {
                         if (TANavigationManager.instance.getItem(parts[1]))
                             TAGameManager.instance.inventory.Add(parts[1]);
@@ -84,33 +86,40 @@ public class TAInputManager : MonoBehaviour
 
                     else if (parts[0] == "restart")
                         TANavigationManager.instance.GameRestart();
+                    
+                    else if (parts[0] == "exit")
+                    {
+                        SceneManager.LoadScene(2);
+                        UpdateTerminal("CLosing terminal....");
+                    }
+                        
 
                     else if (parts[0] == "inventory")
                     {
                         if(TAGameManager.instance.inventory.Count == 0)
                         {
-                            UpdateStory("you dont have anything");
+                            UpdateTerminal("you didnt save any files.");
                         }
                         else
                         {
-                            string items = "you have: ";
+                            string items = "you downloaded: ";
                             foreach (string item in TAGameManager.instance.inventory)
                             {
                                 items += item + " ";
                             }
-                            UpdateStory(items);
+                            UpdateTerminal(items);
                         }
                     }
                     else if (parts[0] == "commands")
-                        UpdateStory("Commands: go, get, save, restart, inventory");
+                        UpdateTerminal("Commands: open, download, save, restart, inventory, boot");
 
                     else
-                        UpdateStory("sorry thats not in this room");
+                        UpdateTerminal("No file found with that name.");
                     
                 }
                 else
                 {
-                    UpdateStory("Rut roh... that didn't work. try that again.");
+                    UpdateTerminal("That file doesnt exist.");
                 }
             }
         }
@@ -120,7 +129,7 @@ public class TAInputManager : MonoBehaviour
 
     
 
-    public void UpdateStory(string msg)
+    public void UpdateTerminal(string msg)
     {
         story += "\n" + msg;
         storyText.text = story;

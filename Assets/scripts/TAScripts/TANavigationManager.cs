@@ -2,6 +2,8 @@ using JetBrains.Annotations;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class TANavigationManager : MonoBehaviour
 
@@ -53,11 +55,11 @@ public class TANavigationManager : MonoBehaviour
             }
         }
 
-        TAInputManager.instance.UpdateStory(description);
+        TAInputManager.instance.UpdateTerminal(description);
 
         if (currentRoom.name == "dragon")
         {
-            GameRestart();
+            SceneManager.LoadScene(2); // opens the windows scene
         }
 
     }
@@ -85,7 +87,7 @@ public class TANavigationManager : MonoBehaviour
             if (TAGameManager.instance.inventory.Contains("key") || !getExit(direction).isLocked)
             {
                 currentRoom = exitRooms[direction];
-                TAInputManager.instance.UpdateStory(" you go " + direction);
+                TAInputManager.instance.UpdateTerminal(" Opening " + direction);
                 Unpack();
                 return true;
             }
@@ -117,23 +119,23 @@ public class TANavigationManager : MonoBehaviour
             if (i == item)
             {
                 isFound = true;
-                if(item == "orb")
+                if(item == "systemData")
                 {
                     
                     toKeyNorth.isHidden = false;
-                    TAInputManager.instance.UpdateStory("you picked up the orb!!!");
+                    TAInputManager.instance.UpdateTerminal("Downloading system data...");
                 }
 
-                if(item == "goose")
+                if(item == "eventViewer")
                 {
                     
-                    TAInputManager.instance.UpdateStory("you have a new pet goose!!!");
+                    TAInputManager.instance.UpdateTerminal("Downloading Event Viewer logs...");
                 }
 
                 if(item == "knife")
                 {
                     
-                    TAInputManager.instance.UpdateStory("you picked up the knife!!!");
+                    TAInputManager.instance.UpdateTerminal("you picked up the knife!!!");
                 }
             }
             
@@ -141,7 +143,7 @@ public class TANavigationManager : MonoBehaviour
         if (isFound)
         {
             currentRoom.items.Remove(item);
-            currentRoom.Description = "this room use to have something but guess its gone.";
+            currentRoom.Description = "You already downloaded these files.";
         }
         return isFound;
 

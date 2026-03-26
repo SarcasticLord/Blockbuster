@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/rollamaze.unity
     guid: e981adb4eb8f81a4bb8dde1c1e162be9
   - enabled: 1
+    path: Assets/Scenes/TerminalGame.unity
+    guid: d2526e55427a3c94e9119277f8146487
+  - enabled: 1
     path: Assets/Scenes/UI/Credits.unity
     guid: 7d34be69940cb574baeda76ce2844507
   - enabled: 1
@@ -29,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/CriticalError.unity
     guid: 8de23798b04b05b4ca5d922a9ac8db76
-  - enabled: 0
-    path: Assets/Scenes/Blockbuster.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

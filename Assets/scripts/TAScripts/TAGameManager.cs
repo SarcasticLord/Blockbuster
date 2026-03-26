@@ -34,10 +34,10 @@ public class TAGameManager : MonoBehaviour
 
     public void Load()
     {
-        if (File.Exists(Application.persistentDataPath + "/player.save"))
+        if (File.Exists(Application.persistentDataPath + "/Terminal"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream aFile = File.Open(Application.persistentDataPath + "/player.save", FileMode.Open);
+            FileStream aFile = File.Open(Application.persistentDataPath + "/Terminal", FileMode.Open);
             TASaveState gameState = (TASaveState)bf.Deserialize(aFile);
             aFile.Close();
 
@@ -47,8 +47,7 @@ public class TAGameManager : MonoBehaviour
 
             inventory = gameState.inventory;
         }
-        //else // new player
-        //    NavigationManager.instance.GameRestart();
+        
     }
 
     public void Save()
@@ -58,7 +57,7 @@ public class TAGameManager : MonoBehaviour
         gameState.inventory = inventory;
 
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream aFile = File.Create(Application.persistentDataPath + "/player.save");
+        FileStream aFile = File.Create(Application.persistentDataPath + "/Terminal");
         Debug.Log(Application.persistentDataPath);
         bf.Serialize(aFile, gameState);
         aFile.Close();

@@ -49,6 +49,11 @@ public class NotificationManager : MonoBehaviour
         {
             // there is nothing needed here
         }
+
+         else if (SaveState.lastScene == "TerminalGame")
+        {
+            // there is nothing needed here
+        }
         else
         {
             Invoke("OpenWelcome", 1f);

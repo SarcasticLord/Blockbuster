@@ -25802,7 +25802,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1749481077}
         m_TargetAssemblyTypeName: TitleScene, Assembly-CSharp
-        m_MethodName: ToTitle
+        m_MethodName: TerminalGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
