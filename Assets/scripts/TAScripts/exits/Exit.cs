@@ -1,4 +1,4 @@
-using UnityEditor.Experimental.GraphView;
+using UnityEditor.Experimental;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "exit", menuName = "Text/exit")]

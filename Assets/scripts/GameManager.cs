@@ -40,17 +40,17 @@ public class GameManager : MonoBehaviour
     {
         SaveState gameState = new SaveState();
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream aFile = File.Create(Application.persistentDataPath + "/player.save");
+        FileStream aFile = File.Create(Application.persistentDataPath + "/system");
         bf.Serialize(aFile, gameState);
         aFile.Close();
     }
 
     void Load()
     {
-        if (File.Exists(Application.persistentDataPath + "/player.save"))
+        if (File.Exists(Application.persistentDataPath + "/system"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream aFile = File.Open(Application.persistentDataPath + "/player.save", FileMode.Open);
+            FileStream aFile = File.Open(Application.persistentDataPath + "/system", FileMode.Open);
             SaveState gameState = (SaveState)bf.Deserialize(aFile);
             aFile.Close();
 
