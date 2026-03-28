@@ -71,7 +71,7 @@ public class TAInputManager : MonoBehaviour
                     UpdateTerminal(input);
                     if (parts[0] == "open")
                     {
-                        if (TANavigationManager.instance.SwitchRooms(parts[1]))
+                        if (TANavigationManager.instance.SwitchFolders(parts[1]))
                             Debug.Log("That file exists");
                         else
                             UpdateTerminal("That file doesnt exist or permission denied");
@@ -90,7 +90,7 @@ public class TAInputManager : MonoBehaviour
                     else if (parts[0] == "exit")
                     {
                         SceneManager.LoadScene(2);
-                        UpdateTerminal("CLosing terminal....");
+                        UpdateTerminal("Closing terminal....");
                     }
                         
 

@@ -10,18 +10,18 @@ public class TANavigationManager : MonoBehaviour
 {
     public static TANavigationManager instance;
 
-    public Room startingRoom;
-    public Room currentRoom;
+    public FolderRoom startingFolder;
+    public FolderRoom currentFolder;
 
     public delegate void Restart();
     public event Restart onRestart;
 
     public Exit toKeyNorth;
-    public List<Room> rooms;
+    public List<FolderRoom> folders;
 
 
 
-    private Dictionary<string, Room> exitRooms = new Dictionary<string, Room>();
+    private Dictionary<string, FolderRoom> exitFolder = new Dictionary<string, FolderRoom>();
 
     
 
@@ -36,28 +36,28 @@ public class TANavigationManager : MonoBehaviour
     }
     void Start()
     {
-        currentRoom = startingRoom;
+        currentFolder = startingFolder;
         Unpack();
         TAGameManager.instance.Load();
     }
 
     void Unpack()
     {
-        string description = currentRoom.Description;
+        string description = currentFolder.Description;
 
-        exitRooms.Clear();
-        foreach (Exit e in currentRoom.exits)
+        exitFolder.Clear();
+        foreach (Exit e in currentFolder.exits)
         {
             if (!e.isHidden)
             {
                 description += " " + e.description;
-                exitRooms.Add(e.direction.ToString(), e.room);
+                exitFolder.Add(e.folderName.ToString(), e.folderRoom);
             }
         }
 
         TAInputManager.instance.UpdateTerminal(description);
 
-        if (currentRoom.name == "dragon")
+        if (currentFolder.name == "notifications")
         {
             SceneManager.LoadScene(2); // opens the windows scene
         }
@@ -67,7 +67,7 @@ public class TANavigationManager : MonoBehaviour
     public void GameRestart()
     {
         onRestart.Invoke();             // calling the restsrt event
-        currentRoom = startingRoom;     // puts the player back at the start
+        currentFolder = startingFolder;     // puts the player back at the start
         toKeyNorth.isHidden = true;
        
         bool isFound = false;
@@ -75,19 +75,23 @@ public class TANavigationManager : MonoBehaviour
 
         Unpack();
     }
-    public void SwitchRooms(Room room)
+    public void SwitchFolders(FolderRoom folderRoom)
     {
-        currentRoom = room;
+        currentFolder = folderRoom;
         Unpack();
     }
-    public bool SwitchRooms(string direction)
+    public bool SwitchFolders(string input)
     {
-        if (exitRooms.ContainsKey(direction))
+        input = input.ToLower();
+
+        if (exitFolder.ContainsKey(input))
         {
-            if (TAGameManager.instance.inventory.Contains("key") || !getExit(direction).isLocked)
+            Exit exit = getExit(input);
+
+            if (TAGameManager.instance.inventory.Contains("pubKey") || !exit.isLocked)
             {
-                currentRoom = exitRooms[direction];
-                TAInputManager.instance.UpdateTerminal(" Opening " + direction);
+                currentFolder = exitFolder[input];
+                TAInputManager.instance.UpdateTerminal(" Opening " + input);
                 Unpack();
                 return true;
             }
@@ -99,11 +103,11 @@ public class TANavigationManager : MonoBehaviour
         return false;
 
     }
-    Exit getExit(string direction)
+    Exit getExit(string name)
     {
-        foreach (Exit e in currentRoom.exits)
+        foreach (Exit e in currentFolder.exits)
         {
-            if (e.direction.ToString() == direction)
+            if (e.folderName.ToString() == name.ToLower())
                 return e;
             
         }
@@ -114,7 +118,7 @@ public class TANavigationManager : MonoBehaviour
 
     {
         bool isFound = false;
-        foreach (string i in currentRoom.items)
+        foreach (string i in currentFolder.items)
         {
             if (i == item)
             {
@@ -132,27 +136,27 @@ public class TANavigationManager : MonoBehaviour
                     TAInputManager.instance.UpdateTerminal("Downloading Event Viewer logs...");
                 }
 
-                if(item == "knife")
+                if(item == "pubkey")
                 {
                     
-                    TAInputManager.instance.UpdateTerminal("you picked up the knife!!!");
+                    TAInputManager.instance.UpdateTerminal("Downloading Public Key!!!");
                 }
             }
             
         }
         if (isFound)
         {
-            currentRoom.items.Remove(item);
-            currentRoom.Description = "You already downloaded these files.";
+            currentFolder.items.Remove(item);
+            currentFolder.Description = "You already downloaded these folders.";
         }
         return isFound;
 
     }
-    public Room GetRoomByName(string name)
+    public FolderRoom GetFolderByName(string name)
     {
-        foreach(Room aroom in rooms)
-            if (aroom.name == name)
-                return aroom;
+        foreach(FolderRoom afolder in folders)
+            if (afolder.name == name)
+                return afolder;
         return null;
     }
     

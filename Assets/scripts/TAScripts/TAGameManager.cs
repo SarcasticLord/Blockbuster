@@ -41,9 +41,9 @@ public class TAGameManager : MonoBehaviour
             TASaveState gameState = (TASaveState)bf.Deserialize(aFile);
             aFile.Close();
 
-            Room aroom = TANavigationManager.instance.GetRoomByName(gameState.currentRoom);
-            if (aroom != null)
-                TANavigationManager.instance.SwitchRooms(aroom);
+            FolderRoom afolderRoom = TANavigationManager.instance.GetFolderByName(gameState.currentFolder);
+            if (afolderRoom != null)
+                TANavigationManager.instance.SwitchFolders(afolderRoom);
 
             inventory = gameState.inventory;
         }
@@ -53,7 +53,7 @@ public class TAGameManager : MonoBehaviour
     public void Save()
     {
         TASaveState gameState = new TASaveState();
-        gameState.currentRoom = TANavigationManager.instance.currentRoom.name;
+        gameState.currentFolder = TANavigationManager.instance.currentFolder.name;
         gameState.inventory = inventory;
 
         BinaryFormatter bf = new BinaryFormatter();

@@ -4,12 +4,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "exit", menuName = "Text/exit")]
 public class Exit : ScriptableObject
 {
-    public enum Direction { north, south, east, west };
-
-    public Direction direction;
+    public string folderName;
     [TextArea]
     public string description;
-    public Room room; // the room this exit will be attached to
+    public FolderRoom folderRoom; // the room this exit will be attached to
 
     public bool isLocked;
     public bool isHidden;

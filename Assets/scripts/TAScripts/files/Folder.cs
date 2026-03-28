@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "room", menuName = "Text/room")]
-public class Room : ScriptableObject
+public class FolderRoom : ScriptableObject
 {
-    public string roomName;
+    public string folderName;
     [TextArea]
     public string Description;
     public Exit[] exits;

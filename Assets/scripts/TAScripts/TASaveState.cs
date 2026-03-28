@@ -5,6 +5,6 @@ using System.Collections.Generic;
 
 public class TASaveState
 {
-    public string currentRoom;
+    public string currentFolder;
     public List<string> inventory;
 }
