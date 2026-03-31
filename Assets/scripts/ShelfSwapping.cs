@@ -5,11 +5,12 @@ public class ShelfSwapping : MonoBehaviour
 
     public GameObject[] shelves;
     public int shelfIndex;
+    [SerializeField] PlayerController player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        player = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,11 @@ public class ShelfSwapping : MonoBehaviour
                 GameObject newShelf = Instantiate(shelves[shelfIndex +1], transform.position, transform.rotation);
                 newShelf.GetComponent<ShelfSwapping>().shelfIndex = shelfIndex +1;
                 Destroy(gameObject);
+
+                if (shelfIndex == 6)
+                {
+                    player.stockCount++;
+                }
 
                 
                 

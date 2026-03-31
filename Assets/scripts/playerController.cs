@@ -25,9 +25,11 @@ public class PlayerController : MonoBehaviour
    public bool JumpInput { get; private set; }
    public bool SprintInput { get; private set; }
 
-   private int stockCount;
-   private int netflixCount;
-   private int trashCount;
+        // this is the stuff that matters
+
+   public int stockCount;
+   public int netflixCount;
+   public int trashCount;
 
 
     public TextMeshProUGUI stockedText;
@@ -79,7 +81,7 @@ public class PlayerController : MonoBehaviour
         playerControls.FindActionMap(actionMapName).Disable();
     }
 
-
+        // just kidding this is the stuff that really matters
 
     void Start()
     {
@@ -88,42 +90,49 @@ public class PlayerController : MonoBehaviour
         
         stockCount = 0;
         netflixCount = 0;
-        // SetStockedText();
-        // SetNetflixText();
+        trashCount = 0;
+
+        StockObjective();
+        TrashObjective();
+        MetflicksObjective();
+        
         winTextObject.SetActive(false);
         //loseTextObject.SetActive(false);
     }
 
     public void Objectives() 
     {
-        if (stockCount >= 10 && netflixCount >= 10 && trashCount >= 10);  // when all three conditions are met end the game
-        winTextObject.SetActive(true);
-
-
-        if (timer != null)
+        if (stockCount >= 10 && netflixCount >= 10 && trashCount >= 10) 
         {
-            timer.StopTimer();
+            // when all three conditions are met end the game
+            winTextObject.SetActive(true);
+
+            if (timer != null)
+            {
+                timer.StopTimer();
+            }
+        
         }
         
     }
 
     public void StockObjective()
     {
-        stockCount++;
+        
         stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
         Objectives();
     }
 
     public void MetflicksObjective()
     {
-        netflixCount++;
+       
         netflixText.text = "Metflicks employees stopped: " + netflixCount.ToString() + "/10";
         Objectives();
     }
 
     public void TrashObjective()
     {
-        trashCount++;
+        
         trashText.text = "Trash picked up: " + trashCount.ToString() + "/10";
         Objectives();
     }
