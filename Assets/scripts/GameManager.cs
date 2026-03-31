@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.Analytics;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,9 +22,70 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void start()
+   public int stockCount;
+   public int netflixCount;
+   public int trashCount;
+
+
+    public TextMeshProUGUI stockedText;
+    public TextMeshProUGUI netflixText;
+    public TextMeshProUGUI trashText;
+
+    public GameObject winTextObject;
+    //public GameObject loseTextObject;
+    public Timer timer;
+    void Start()
     {
         Load();
+        Objectives();
+        
+        stockCount = 0;
+        netflixCount = 0;
+        trashCount = 0;
+
+        StockObjective();
+        TrashObjective();
+        MetflicksObjective();
+        
+        winTextObject.SetActive(false);
+        //loseTextObject.SetActive(false);
+    }
+
+    public void Objectives() 
+    {
+        if (stockCount >= 10 && netflixCount >= 10 && trashCount >= 10) 
+        {
+            // when all three conditions are met end the game
+            winTextObject.SetActive(true);
+
+            if (timer != null)
+            {
+                timer.StopTimer();
+            }
+        
+        }
+        
+    }
+
+    public void StockObjective()
+    {
+        
+        stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
+        Objectives();
+    }
+
+    public void MetflicksObjective()
+    {
+       
+        netflixText.text = "Metflicks employees stopped: " + netflixCount.ToString() + "/10";
+        Objectives();
+    }
+
+    public void TrashObjective()
+    {
+        
+        trashText.text = "Trash picked up: " + trashCount.ToString() + "/10";
+        Objectives();
     }
 
     public void DecreaseLives()
@@ -38,11 +100,19 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
+
         SaveState gameState = new SaveState();
+
+        gameState.stockCount = stockCount;
+        gameState.netflixCount = netflixCount;
+        gameState.trashCount = trashCount;
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream aFile = File.Create(Application.persistentDataPath + "/system");
         bf.Serialize(aFile, gameState);
         aFile.Close();
+
+        
     }
 
     void Load()
@@ -53,6 +123,10 @@ public class GameManager : MonoBehaviour
             FileStream aFile = File.Open(Application.persistentDataPath + "/system", FileMode.Open);
             SaveState gameState = (SaveState)bf.Deserialize(aFile);
             aFile.Close();
+
+            stockCount = gameState.stockCount;
+            netflixCount = gameState.netflixCount;
+            trashCount = gameState.trashCount;
 
         }
        

@@ -35,7 +35,7 @@ public class ShelfSwapping : MonoBehaviour
 
                 if (shelfIndex == 6)
                 {
-                    player.stockCount++;
+                    GameManager.instance.stockCount++;
                 }
 
                 

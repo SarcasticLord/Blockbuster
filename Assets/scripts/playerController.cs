@@ -27,18 +27,7 @@ public class PlayerController : MonoBehaviour
 
         // this is the stuff that matters
 
-   public int stockCount;
-   public int netflixCount;
-   public int trashCount;
-
-
-    public TextMeshProUGUI stockedText;
-    public TextMeshProUGUI netflixText;
-    public TextMeshProUGUI trashText;
-
-    public GameObject winTextObject;
-    //public GameObject loseTextObject;
-    public Timer timer;
+   
     public Transform BoxSnap;
     public Transform BroomSnap;
     private GameObject holdBox;
@@ -86,56 +75,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         
-        Objectives();
-        
-        stockCount = 0;
-        netflixCount = 0;
-        trashCount = 0;
-
-        StockObjective();
-        TrashObjective();
-        MetflicksObjective();
-        
-        winTextObject.SetActive(false);
-        //loseTextObject.SetActive(false);
     }
 
-    public void Objectives() 
-    {
-        if (stockCount >= 10 && netflixCount >= 10 && trashCount >= 10) 
-        {
-            // when all three conditions are met end the game
-            winTextObject.SetActive(true);
-
-            if (timer != null)
-            {
-                timer.StopTimer();
-            }
-        
-        }
-        
-    }
-
-    public void StockObjective()
-    {
-        
-        stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
-        Objectives();
-    }
-
-    public void MetflicksObjective()
-    {
-       
-        netflixText.text = "Metflicks employees stopped: " + netflixCount.ToString() + "/10";
-        Objectives();
-    }
-
-    public void TrashObjective()
-    {
-        
-        trashText.text = "Trash picked up: " + trashCount.ToString() + "/10";
-        Objectives();
-    }
 
     void OnTriggerEnter(Collider other) // player hits the pickups
     {
