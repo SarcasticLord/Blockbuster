@@ -29,13 +29,15 @@ public class ShelfSwapping : MonoBehaviour
             
             if (shelfIndex < shelves.Length - 1)
             {
-                GameObject newShelf = Instantiate(shelves[shelfIndex +1], transform.position, transform.rotation);
-                newShelf.GetComponent<ShelfSwapping>().shelfIndex = shelfIndex +1;
+                int newShelfIndex = shelfIndex + 1;
+                GameObject newShelf = Instantiate(shelves[newShelfIndex], transform.position, transform.rotation);
+                newShelf.GetComponent<ShelfSwapping>().shelfIndex = newShelfIndex;
                 Destroy(gameObject);
 
-                if (shelfIndex == 6)
+                if (newShelfIndex == 6)
                 {
                     GameManager.instance.stockCount++;
+                    GameManager.instance.StockObjective();
                 }
 
                 

@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
 
         // this is the stuff that matters
 
-   
+    public Timer timer;
+    
     public Transform BoxSnap;
     public Transform BroomSnap;
     private GameObject holdBox;
