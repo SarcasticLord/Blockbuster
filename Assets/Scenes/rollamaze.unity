@@ -16215,6 +16215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92768b410bfbbb04c847654e8c5bb367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stockCount: 0
+  netflixCount: 0
+  trashCount: 0
+  stockedText: {fileID: 0}
+  netflixText: {fileID: 0}
+  trashText: {fileID: 0}
+  winTextObject: {fileID: 1177155786}
+  timer: {fileID: 421682026}
 --- !u!1 &2035691516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6281005890219310367, guid: 287c22c46ec0c1b469fa52f96336bbe2, type: 3}
