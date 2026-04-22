@@ -1,7 +1,11 @@
+// as a reminder i followed a tutorial for this i do have my own additions to the script
+
  using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 
@@ -31,7 +35,12 @@ public class PlayerController : MonoBehaviour
     
     public Transform BoxSnap;
     public Transform BroomSnap;
-    private GameObject holdBox;
+    public GameObject holdItem;
+    public static PlayerController instance;
+    
+
+
+
 
     void Awake()
     {
@@ -43,6 +52,13 @@ public class PlayerController : MonoBehaviour
         sprintAction = mapRefrence.FindAction(sprint);
 
         SubscribeActionValuesToInputEvents();
+
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(instance);
+
+        DontDestroyOnLoad(gameObject);
 
     }
 
@@ -73,18 +89,27 @@ public class PlayerController : MonoBehaviour
 
         // just kidding this is the stuff that really matters
 
-    void Start()
+    
+    
+    void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            DropItem();
+        }
+
         
     }
 
+    
 
-    void OnTriggerEnter(Collider other) // player hits the pickups
+
+    void OnTriggerEnter(Collider other) // the player can run into a lot of things
     {
 
-        if (other.gameObject.CompareTag("pickUp") && holdBox == null)
+        if (other.gameObject.CompareTag("pickUp") && holdItem == null) // picking up the box
         {
-            holdBox = other.gameObject;
+            holdItem = other.gameObject;
 
             other.gameObject.transform.position = BoxSnap.position;
             other.gameObject.transform.rotation = BoxSnap.rotation;
@@ -95,9 +120,9 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.gameObject.CompareTag("broom") && holdBox == null)
+        if (other.gameObject.CompareTag("broom") && holdItem == null) // picking up the broom
         {
-            holdBox = other.gameObject;
+            holdItem = other.gameObject;
 
             other.gameObject.transform.position = BroomSnap.position;
             other.gameObject.transform.rotation = BroomSnap.rotation;
@@ -105,10 +130,40 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.gameObject.CompareTag("exit")) // colliding with the wall debug
+
+        // these are the invisible walls
+
+        if (other.gameObject.CompareTag("exit")) // colliding with the wall debug sends you to the title screen
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(0);
         }
+
+        if (other.CompareTag("directions")) // colliding with the invisible wall changes the ui
+        {
+            TitleScene.instance.directions.SetActive(false);  
+            TitleScene.instance.StartCoroutine(TitleScene.instance.TitleText());
+        }
+
+    }
+
+    public bool HoldingBroom()
+    {
+        return holdItem != null && holdItem.CompareTag("broom");
+    }
+
+    void DropItem() // dropping the items
+    {
+        if (holdItem == null) return;
+
+        if (holdItem.CompareTag("broom") || holdItem.CompareTag("pickUp"))
+        {
+            holdItem.transform.SetParent(null);
+            holdItem.transform.position = transform.position + transform.forward * 2f;
+
+            holdItem = null;
+        }
+
+        
     }
 
 
@@ -124,12 +179,14 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.instance.DecreaseLives();
         Debug.Log("lives: " + GameManager.instance.GetLives());
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
 
         if (timer != null)
         {
             timer.StopTimer();
         }
+
+        Destroy (gameObject); // destorys the player, player controller does the rest
     }
 
  

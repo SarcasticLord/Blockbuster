@@ -10,11 +10,20 @@ public class TitleScene : MonoBehaviour
 {
 
     public GameObject[] textObjects;
+    public GameObject directions;
     public GameObject[] flashingText;
+    
+    public static TitleScene instance;
 
     public RectTransform clickAnywhere;
 
-
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+    }
     void Start()
     {
         foreach (GameObject startText in textObjects)
@@ -26,7 +35,14 @@ public class TitleScene : MonoBehaviour
         {
             flashText.SetActive(false);
         }
-        StartCoroutine(TitleText());
+        
+
+        if (SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 0) // if in title or exit start the thing and unlock cursor
+        {
+            StartCoroutine(TitleText()); 
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true;
+        }
 
         
     }
@@ -42,7 +58,7 @@ public class TitleScene : MonoBehaviour
         }
     }
 
-    IEnumerator TitleText() 
+    public IEnumerator TitleText() 
     {
         foreach (GameObject startText in textObjects) // when the scene loads this "loads" in the ui elements 
         {

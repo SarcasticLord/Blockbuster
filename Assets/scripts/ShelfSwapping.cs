@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 
 public class ShelfSwapping : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class ShelfSwapping : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("pickUp"))
+        if (other.CompareTag("pickUp")) // reminder that pickup is the box i should change the name
         {
             if (shelfIndex >= shelves.Length - 1) return;
 
@@ -30,13 +30,13 @@ public class ShelfSwapping : MonoBehaviour
             if (shelfIndex < shelves.Length - 1)
             {
                 int newShelfIndex = shelfIndex + 1;
-                GameObject newShelf = Instantiate(shelves[newShelfIndex], transform.position, transform.rotation);
+                GameObject newShelf = Instantiate(shelves[newShelfIndex], transform.position, transform.rotation); // little asset swapping it takes the index of shelf objects and swaps to the next one
                 newShelf.GetComponent<ShelfSwapping>().shelfIndex = newShelfIndex;
                 Destroy(gameObject);
 
-                if (newShelfIndex == 6)
+                if (newShelfIndex == 5) // when the full shelf is done it adds a point to the shelf counter 
                 {
-                    GameManager.instance.stockCount++;
+                    GameManager.instance.stockCount++; 
                     GameManager.instance.StockObjective();
                 }
 

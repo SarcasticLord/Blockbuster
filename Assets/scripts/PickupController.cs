@@ -1,3 +1,5 @@
+// this is called the pickup controller but its mostly what moves the box up and down and spins in circles 
+
 using System.Collections;
 using UnityEngine;
 

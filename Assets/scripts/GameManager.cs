@@ -51,11 +51,11 @@ public class GameManager : MonoBehaviour
         //loseTextObject.SetActive(false);
     }
 
-    public void Objectives() 
+    public void Objectives() // when all three conditions are met end the game
     {
-        if (stockCount >= 10 && netflixCount >= 10 && trashCount >= 10) 
+        if (stockCount >= 10 && netflixCount >= 50 && trashCount >= 20) 
         {
-            // when all three conditions are met end the game
+            
             winTextObject.SetActive(true);
 
             if (timer != null)
@@ -67,24 +67,24 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void StockObjective()
+    public void StockObjective() // stocking the shelves    setting the score to the text
     {
         
         stockedText.text = "Stock the shelves: " + stockCount.ToString() + "/10";
         Objectives();
     }
 
-    public void MetflicksObjective()
+    public void MetflicksObjective() // killing the metflicks employees    setting the score to the text
     {
        
-        netflixText.text = "Metflicks employees stopped: " + netflixCount.ToString() + "/10";
+        netflixText.text = "Metflicks employees stopped: " + netflixCount.ToString();
         Objectives();
     }
 
-    public void TrashObjective()
+    public void TrashObjective() // sweeping up the trash    setting the score to the text
     {
         
-        trashText.text = "Trash picked up: " + trashCount.ToString() + "/10";
+        trashText.text = "Trash picked up: " + trashCount.ToString() + "/20";
         Objectives();
     }
 
