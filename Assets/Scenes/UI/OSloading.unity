@@ -1135,8 +1135,9 @@ MonoBehaviour:
   - {fileID: 1360480949}
   - {fileID: 1294203964}
   - {fileID: 42398892}
+  directions: {fileID: 1595702839}
   flashingText: []
-  clickAnywhere: {fileID: 0}
+  clickAnywhere: {fileID: 1595702840}
 --- !u!4 &1482889697
 Transform:
   m_ObjectHideFlags: 0
@@ -1187,7 +1188,6 @@ MonoBehaviour:
   - '[     OK     ]      Initializing firewall'
   - '[     OK     ]     Starting File_System'
   - '[ FAILED ]     Starting Security_Manager'
-  - ' '
   - '[     OK     ]     Loading Assets'
   - '[     OK     ]     Starting BlockBlaster_Minigame'
   - '[     OK     ]     Starting RollaMaze_Minigame'
@@ -1204,7 +1204,6 @@ MonoBehaviour:
   - '[     OK     ]     Starting Start_Menu'
   - '[     OK     ]     Checking_System_Sanity'
   - '[     OK     ]     Starting Shameless_Plugs'
-  - ' '
   - '[     OK     ]     Loading User_Preferencess'
   - '[     OK     ]     Launching System_Interface'
   - '[     OK     ]     Finalizing Startup Tasks'
@@ -1213,7 +1212,6 @@ MonoBehaviour:
   - '[ CRITICAL ]  FILE_SYSTEM_CRITICAL_ERROR'
   - '[ CRITICAL ]  SYSTEM_SECURITY_CRITICAL_ERROR'
   - '[ CRITICAL ]  SYSTEM_INSTABILITY: 9999999'
-  - '[ CRITICAL ]  RUTROH_PROTOCALL_FAILED'
   - '[ CRITICAL ]  RUTROH_PROTOCALL_FAILED'
 --- !u!1 &1552381905
 GameObject:
@@ -1290,6 +1288,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1595702839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1595702840}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1595702840
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595702839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1956019344}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1956019340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1421,7 @@ RectTransform:
   - {fileID: 1149993941}
   - {fileID: 1360480950}
   - {fileID: 1294203968}
+  - {fileID: 1595702840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

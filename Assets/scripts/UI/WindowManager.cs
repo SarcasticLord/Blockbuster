@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class WindowManager : MonoBehaviour
 {
+    public static WindowManager instance;
+
     public NotificationManager notifManager;
 
     public GameObject myComputerWindow;
@@ -21,6 +23,7 @@ public class WindowManager : MonoBehaviour
     public RectTransform clickArea;
     public GameObject taskbarFiles;
     public GameObject taskbarComputer;
+    public GameObject startBlockblaster;
 
     public GameObject RCfolderMenu;
     public RectTransform clickAreaFolder;
@@ -35,6 +38,14 @@ public class WindowManager : MonoBehaviour
 
 
       // open/close windows in "os mode" open/close windows in "os mode" open/close windows in "os mode" open/close windows in "os mode" open/close windows in "os mode"
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+    }
+    
     void Start()
     {
         //myComputerWindow.SetActive(false);
@@ -43,6 +54,7 @@ public class WindowManager : MonoBehaviour
         
         taskbarFiles.SetActive(false);
         taskbarComputer.SetActive(false);
+        startBlockblaster.SetActive(false);
 
 
         ResetText(MCText);

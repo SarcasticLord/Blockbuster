@@ -133,9 +133,9 @@ public class PlayerController : MonoBehaviour
 
         // these are the invisible walls
 
-        if (other.gameObject.CompareTag("exit")) // colliding with the wall debug sends you to the title screen
+        if (other.gameObject.CompareTag("exit")) // colliding with the wall debug sends you to windows
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
 
         if (other.CompareTag("directions")) // colliding with the invisible wall changes the ui

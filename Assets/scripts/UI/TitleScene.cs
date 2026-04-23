@@ -37,13 +37,12 @@ public class TitleScene : MonoBehaviour
         }
         
 
-        if (SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 0) // if in title or exit start the thing and unlock cursor
+        if (SceneManager.GetActiveScene().buildIndex != 3) // if in title or exit start the thing and unlock cursor
         {
             StartCoroutine(TitleText()); 
             Cursor.lockState = CursorLockMode.None; 
             Cursor.visible = true;
         }
-
         
     }
 
@@ -53,7 +52,7 @@ public class TitleScene : MonoBehaviour
         {
             if (RectTransformUtility.RectangleContainsScreenPoint(clickAnywhere, Input.mousePosition)) // right clickig on the folder opens the delete menu and closes the new menu
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene("windows");
             } 
         }
     }
@@ -89,46 +88,47 @@ public class TitleScene : MonoBehaviour
     public void StartGame() // STARTS BLOCKBUSTER
     {
         SaveState.lastScene = "Blockblaster";
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("BlockblasterMain");
+        WindowManager.instance.startBlockblaster.SetActive(true);
     }
 
     public void Minigame() // START ROLL A MAZE
     {
         SaveState.lastScene = "RollaMaze";
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("rollamaze");
     }
 
     public void TerminalGame() // START TERMINAL GAME
     {
         SaveState.lastScene = "TerminalGame";
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("TerminalGame");
     }
 
     public void Exit() // EXITS THE GAME
     {
         SaveState.lastScene = "Exit";
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene("ExitScene");
     }
 
     public void Credits() // OPENS CREDITS
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene("Credits");
     }
 
     public void WindowsOS() // OPENS WINDOWS OS
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("windows");
     }
 
     public void POST() // OPENS POST
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("OSloading");
     }
 
     public void CriticalError() // critical error debug
     {
         SaveState.lastScene = "CritError";
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene("CriticalError");
     }
 
 
