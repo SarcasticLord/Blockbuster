@@ -2873,6 +2873,7 @@ MonoBehaviour:
   - {fileID: 20834971}
   - {fileID: 455620832}
   - {fileID: 1561043743}
+  directions: {fileID: 0}
   flashingText:
   - {fileID: 1414690493}
   clickAnywhere: {fileID: 0}

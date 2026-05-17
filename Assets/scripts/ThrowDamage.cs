@@ -1,8 +1,12 @@
+// this script goes on the boxes
+// when the boxes hit the enemy it does damage
+
+// now you may be asking why not put it on the enemy?    good question
+
 using UnityEngine;
 
 public class ThrowDamage : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -18,7 +22,7 @@ public class ThrowDamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // the item
         }
           
     }

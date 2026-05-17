@@ -1,3 +1,6 @@
+// this is the timer
+// i got this from a tutorial
+
 using UnityEngine;
 using TMPro;
 

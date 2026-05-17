@@ -1,3 +1,8 @@
+// i followed a tutorial on youtube for this 
+// this is for the player movement stuff 
+// this script was written by me but does not include any other game related things
+
+
 using UnityEngine;
 
 public class FPSController : MonoBehaviour

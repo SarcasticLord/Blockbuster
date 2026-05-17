@@ -29,18 +29,6 @@ public class PlayerController : MonoBehaviour
    public bool JumpInput { get; private set; }
    public bool SprintInput { get; private set; }
 
-        // this is the stuff that matters
-
-    public Timer timer;
-    
-    public Transform BoxSnap;
-    public Transform BroomSnap;
-    public GameObject holdItem;
-    public static PlayerController instance;
-    
-
-
-
 
     void Awake()
     {
@@ -54,11 +42,14 @@ public class PlayerController : MonoBehaviour
         SubscribeActionValuesToInputEvents();
 
         if (instance == null)
+        {
             instance = this;
+            
+        }
         else if (instance != this)
-            Destroy(instance);
-
-        DontDestroyOnLoad(gameObject);
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -88,7 +79,11 @@ public class PlayerController : MonoBehaviour
     }
 
         // just kidding this is the stuff that really matters
-
+    public Timer timer;
+    public Transform BoxSnap;
+    public Transform BroomSnap;
+    public GameObject holdItem;
+    public static PlayerController instance;
     
     
     void Update()
@@ -107,7 +102,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other) // the player can run into a lot of things
     {
 
-        if (other.gameObject.CompareTag("pickUp") && holdItem == null) // picking up the box
+        if (other.gameObject.CompareTag("pickUp") && holdItem == null) // picking up the box    dont forget E also raycast pickup the box
         {
             holdItem = other.gameObject;
 
@@ -115,7 +110,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.transform.rotation = BoxSnap.rotation;
             other.gameObject.transform.SetParent(BoxSnap);
 
-            other.GetComponent<PickupController>().StopRotating();
+            other.GetComponent<BoxMovement>().StopRotating();
             
 
         }
@@ -133,9 +128,9 @@ public class PlayerController : MonoBehaviour
 
         // these are the invisible walls
 
-        if (other.gameObject.CompareTag("exit")) // colliding with the wall debug sends you to windows
+        if (other.gameObject.CompareTag("exit")) // colliding with the wall debug sends you to the title screen
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(0);
         }
 
         if (other.CompareTag("directions")) // colliding with the invisible wall changes the ui
@@ -146,7 +141,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public bool HoldingBroom()
+    public bool HoldingBroom() // checks to see if the player is holding the broom or not
     {
         return holdItem != null && holdItem.CompareTag("broom");
     }
@@ -180,13 +175,21 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.DecreaseLives();
         Debug.Log("lives: " + GameManager.instance.GetLives());
         SceneManager.LoadScene(1);
+        GameManager.instance.ResetScores();
 
-        if (timer != null)
+        if (ObjectiveUI.instance.timer != null)
         {
-            timer.StopTimer();
+            ObjectiveUI.instance.timer.StopTimer();
         }
 
         Destroy (gameObject); // destorys the player, player controller does the rest
+
+        if (GameManager.instance.lives <= 0)
+        {
+            TitleScene.instance.ToTitle();
+            GameManager.instance.ResetGame();
+        }
+            
     }
 
  

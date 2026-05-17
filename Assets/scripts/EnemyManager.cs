@@ -17,7 +17,7 @@ public class EnemyManager : MonoBehaviour
         enemy = GetComponent<NavMeshAgent>();
 
         if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindGameObjectWithTag("Player"); // work arounds because the inspector doesent work with this script ???
 
         if (playerHealth == null && player != null)
             playerHealth = player.GetComponent<PlayerHealth>();
@@ -33,13 +33,13 @@ public class EnemyManager : MonoBehaviour
 
     void OnTriggerEnter(Collider collision) // enemy damage when the items hit it 
     {
-        if (collision.gameObject.CompareTag("throwable"))
+        if (collision.gameObject.CompareTag("throwable")) // objects hitting enemies
             health += -25;
 
         if (health <= 0)
         {
             Destroy(gameObject);
-            GameManager.instance.netflixCount++;  // after killing an employee get a point      you need at least 20 to win
+            GameManager.instance.netflixCount++;  // after killing an employee get a point      you need at least 20-50 to win
             GameManager.instance.MetflicksObjective();
         }
 

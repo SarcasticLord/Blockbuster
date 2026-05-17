@@ -23,7 +23,7 @@ public class ObjectiveTasks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); // this is here so i can see the ray without needing to hit E or MB0
         Debug.DrawRay(ray.origin, ray.direction * 5f, Color.green);
         
         if (Input.GetMouseButtonDown(0)) 
@@ -87,7 +87,7 @@ public class ObjectiveTasks : MonoBehaviour
                 hit.transform.gameObject.transform.rotation = BoxSnap.rotation;
                 hit.transform.gameObject.transform.SetParent(BoxSnap);
 
-                hit.transform.GetComponent<PickupController>().StopRotating();
+                hit.transform.GetComponent<BoxMovement>().StopRotating(); // stops the box spinning
             }
 
         }

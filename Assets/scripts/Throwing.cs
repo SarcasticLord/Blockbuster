@@ -28,12 +28,12 @@ public float despawnTime = 10f;
 
     public void Throw()
     {
-        if (throwableObjects.Length == 0) return;
+        if (throwableObjects.Length == 0) return; // random item from list to throw at enemies
 
         int random = Random.Range(0, throwableObjects.Length);
         GameObject itemToThrow = throwableObjects[random];
 
-        GameObject spawnRandom = Instantiate(itemToThrow, throwPoint.position, throwPoint.rotation);
+        GameObject spawnRandom = Instantiate(itemToThrow, throwPoint.position, throwPoint.rotation); // spawns at point infront of player
         Rigidbody rb = spawnRandom.GetComponent<Rigidbody>();
 
         if (rb != null)
@@ -41,6 +41,6 @@ public float despawnTime = 10f;
             rb.AddForce(throwPoint.forward * throwForce, ForceMode.Impulse);
         }
 
-        Destroy(spawnRandom, despawnTime);
+        Destroy(spawnRandom, despawnTime); // dies after set time so you cant blow up your computer
     }
 }

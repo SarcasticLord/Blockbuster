@@ -1,3 +1,5 @@
+ // this script goes on the shelf object
+ 
  using UnityEngine;
 
 public class ShelfSwapping : MonoBehaviour
@@ -30,7 +32,7 @@ public class ShelfSwapping : MonoBehaviour
             if (shelfIndex < shelves.Length - 1)
             {
                 int newShelfIndex = shelfIndex + 1;
-                GameObject newShelf = Instantiate(shelves[newShelfIndex], transform.position, transform.rotation); // little asset swapping it takes the index of shelf objects and swaps to the next one
+                GameObject newShelf = Instantiate(shelves[newShelfIndex], transform.position, transform.rotation); // little asset swapping it takes the index of shelf objects and swaps to the next one in the list
                 newShelf.GetComponent<ShelfSwapping>().shelfIndex = newShelfIndex;
                 Destroy(gameObject);
 
