@@ -4,24 +4,40 @@ using UnityEngine.UI;
 
 public class DragandDrop : MonoBehaviour, IBeginDragHandler, IDragHandler//, IEndDragHandler
 {
-
     private RectTransform rectTransform;
+    private RectTransform window;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        window = transform.parent.GetComponent<RectTransform>();
     }
 
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        transform.SetAsLastSibling();
+        if(window != null)
+        {
+            window.SetAsLastSibling();
+        }
+        else
+        {
+            transform.SetAsLastSibling();
+        } 
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta;
+        if(window != null)
+        {
+            window.anchoredPosition += eventData.delta;
+        }
+        else
+        {
+            rectTransform.anchoredPosition += eventData.delta;
+        }
+        
     }
 
 
