@@ -11501,7 +11501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77.95691, y: 0.087890625}
+  m_AnchoredPosition: {x: -87.7, y: 0.087890625}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &724269146
@@ -12773,8 +12773,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 851.8568, y: 29.431396}
-  m_SizeDelta: {x: 205.7262, y: 47.4757}
+  m_AnchoredPosition: {x: 839.7307, y: 29.431396}
+  m_SizeDelta: {x: 229.9784, y: 47.4757}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &775230444
 MonoBehaviour:
@@ -13479,7 +13479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.356934, y: 0.087890625}
+  m_AnchoredPosition: {x: -40.1, y: 0.087890625}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806254304
@@ -14732,7 +14732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 655.2, y: 0}
+  m_AnchoredPosition: {x: 631.4, y: 0}
   m_SizeDelta: {x: 173.0334, y: 52.9363}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874197980
@@ -27960,13 +27960,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1665352555}
   - component: {fileID: 1665352557}
+  - component: {fileID: 1665352558}
   - component: {fileID: 1665352556}
   m_Layer: 5
   m_Name: time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &1665352555
 RectTransform:
@@ -27984,8 +27985,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44.50918, y: 0.00008614361}
-  m_SizeDelta: {x: 116.0613, y: 47.476}
+  m_AnchoredPosition: {x: 43.516, y: 0.00008614361}
+  m_SizeDelta: {x: 142.95, y: 47.476}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665352556
 MonoBehaviour:
@@ -28007,7 +28008,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9:41 AM
+  m_text: 00:00 AM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
   m_sharedMaterial: {fileID: -699112959996641730, guid: 241c6acceca8b844baad6cbcf60cefc7, type: 2}
@@ -28087,6 +28088,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665352554}
   m_CullTransparentMesh: 1
+--- !u!114 &1665352558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665352554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce906615ed9241da81e27822aebb5a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockTimer
+  timerText: {fileID: 1665352556}
 --- !u!1 &1676376255
 GameObject:
   m_ObjectHideFlags: 0
@@ -35812,11 +35826,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8424829722420829810, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 59.0386
+      value: 59.036
       objectReference: {fileID: 0}
     - target: {fileID: 8424829722420829810, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29.5163
+      value: 29.518
       objectReference: {fileID: 0}
     - target: {fileID: 8482721750194816115, guid: dcbfd42487f653943b66bcb41039937d, type: 3}
       propertyPath: m_SizeDelta.x
